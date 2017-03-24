@@ -14,13 +14,13 @@
 </br>
 </br>
 <h3>
-LOG IN FORM
+LOGIN FORM
 </h3>
 <div id="login-form">
 <form method="post" name="f1" action="tvalidate.jsp" >
 <table align="center" width="30%" border="0">
 <tr>
-<td><h3>USER NAME:</h3></br><input type="text" name="uname" placeholder="User name" required /></td>
+<td><h3>EMAIL:</h3></br><input type="text" name="email" placeholder="Registered Email" required /></td>
 </tr>
 <tr>
 <td><h3>PASSWORD:</h3></br><input type="password" name="pass" placeholder="password" required /></td>

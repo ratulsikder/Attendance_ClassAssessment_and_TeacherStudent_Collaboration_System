@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%! String uname,pass;%>
+<%! String email,pass;%>
 <%
- uname= request.getParameter("uname");
+ email= request.getParameter("email");
  pass= request.getParameter("pass");
 
  try {
@@ -21,24 +21,24 @@
      
     Connection con=(Connection)sc.getAttribute("MyConn");
  
-	PreparedStatement ps =con.prepareStatement("Select * from TEACHER where uname=? and pass=? ");
+	PreparedStatement ps =con.prepareStatement("Select * from TEACHER where email=? and pass=? ");
 	
 	
 
-    ps.setString(1,uname);
+    ps.setString(1,email);
     ps.setString(2,pass);
     ps.execute();
+    HttpSession hs=request.getSession();
      
    ResultSet rs=ps.executeQuery();
    if(rs.next())
    {
-	 %>
-	 <Font color=green size=5 > <%=uname %> .... log in Successful....</Font><br>
-
+	   
+	   hs.setAttribute("email", email);
+	   hs.setAttribute("name", rs.getString("name"));
+	   response.setStatus(response.SC_MOVED_TEMPORARILY);
+	   response.setHeader("Location", "TeacherPanel.jsp");
 	
-	  <a href="index.jsp"> log out</a> 
-		 
-	 <% 
    }
    else
    {	
