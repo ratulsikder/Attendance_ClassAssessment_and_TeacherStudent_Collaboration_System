@@ -20,54 +20,33 @@
 </head>
 <body>
 
-<div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-				 <a class="navbar-brand" href="#">SB Admin</a>
-                
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
 
-                <h1>WELCOME to the portal...</h1>
-            </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
-            <!-- /.navbar-collapse -->
-        </nav>
 
         <div id="page-wrapper">
+                
+<br>
+<br>
+<br>
 
             <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                          Page hadding....
-                        </h1>
-                        
-                    </div>
-                </div>
-                <!-- /.row -->
+               
 
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
+                            <i class="fa fa-info-circle"></i>  <strong><h2>Student attendance, class assessment, assignment and report Maintenance with teacher-student collaboration system.</h2></strong> 
                         </div>
                     </div>
                 </div>
+                                
+<br>
+<br>
+<br>
+
                 <!-- /.row -->
 
                 <div class="row">
@@ -86,7 +65,15 @@
                             </div>
                             <a href="Studentlog.jsp">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Click here for Login or Registration</span>
+                                <br>
+
+
+                                    <span class="pull-left"><h2>Click here for Login or Registration</h2></span>
+                                    <br>
+<br>
+<br>
+<br>
+<br>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -100,16 +87,30 @@
                                     <div class="col-xs-3">
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
+                                   
                                     <div class="col-xs-9 center">
-                                        <div class="huge">Teacher Corner</div>
+                                        <div class="huge"> Teacher Corner</div>
 										   <div>BSMRSTU</div>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                             <a href="tlog.jsp">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Click here for Login or Registration</span>
+                                                
+<br>
+
+
+                                    <span class="pull-left"><h2>Click here for Login or Registration</h2></span>
+                                                    
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -126,6 +127,15 @@
 
                
                 <!-- /.row -->
+                                
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
             </div>
             <!-- /.container-fluid -->
@@ -133,8 +143,7 @@
         </div>
         <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+ 
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
