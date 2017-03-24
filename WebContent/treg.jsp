@@ -15,6 +15,7 @@
 <div id="login-form">
 <form method="post" name="fl"  action="tregs.jsp" >
 <table align="center" width="30%" border="0">
+
 <tr>
 <td><h3>Name:</h3>
 <input type="text" name="name" placeholder="Your Name" required /></td>
