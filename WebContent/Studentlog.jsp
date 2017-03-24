@@ -20,10 +20,10 @@ LOG IN FORM
 <form method="post" action="StudentPage.jsp" name="f1">
 <table align="center" width="30%" border="0">
 <tr>
-<td><h3>USER NAME:</h3></br><input type="text" name="uname" placeholder="User name" required /></td>
+<td><h3>USER NAME:</h3></br><input type="text" name="user_name" placeholder="User name" required /></td>
 </tr>
 <tr>
-<td><h3>PASSWORD:</h3></br><input type="password" name="pass" placeholder="password" required /></td>
+<td><h3>PASSWORD:</h3></br><input type="password" name="password" placeholder="password" required /></td>
 </tr>
 <tr>
 <td><button type="submit" name="btn-login">Log in</button></td>

@@ -23,15 +23,15 @@
 <body>
 
 
-<%! String uname,pass;%>
+<%! String user_name,password;%>
 <%
 response.setContentType("text/html");
 
 PrintWriter pw=response.getWriter();
- uname= request.getParameter("uname");
- pass= request.getParameter("pass");
+ user_name= request.getParameter("user_name");
+ password= request.getParameter("password");
  HttpSession hs=request.getSession();
-	hs.setAttribute("user", uname);
+hs.setAttribute("user", user_name);
 
  try {
 
@@ -40,18 +40,18 @@ PrintWriter pw=response.getWriter();
     Connection con=(Connection)sc.getAttribute("MyConn");
     
      
-	PreparedStatement ps =con.prepareStatement("Select * from STUDENT where uname=? and pass=? ");
+	PreparedStatement ps =con.prepareStatement("Select * from STUDENT where user_name=? and password=? ");
 	
 	
 
-    ps.setString(1,uname);
-    ps.setString(2,pass);
+    ps.setString(1,user_name);
+    ps.setString(2,password);
     ps.execute();
  
    ResultSet rs=ps.executeQuery();
    if(rs.next())
    {
-	   hs.setMaxInactiveInterval(10);
+	
 	 %>
  <div id="wrapper">
 
@@ -72,19 +72,16 @@ PrintWriter pw=response.getWriter();
 
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Hi....<%= uname %>  <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Hi....<%= user_name %>  <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        
                      
                         <li class="divider"></li>
                         <li>
-                            <a href="logout.java"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                             
                         </li>
-                        <li>
-                         
-                            <a href="LogOut.jsp"><i class="fa fa-fw fa-power-off"></i>Logout</a>
-                        </li>
+
                     </ul>
                 </li>
             </ul>

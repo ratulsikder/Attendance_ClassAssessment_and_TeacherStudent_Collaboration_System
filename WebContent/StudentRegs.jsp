@@ -10,12 +10,19 @@
 <title>New Student Regs</title>
 </head>
 <body>
-<%! String name,email,user_name,password;%>
+<%! String id,name,email,dept,sesion,conu,gname,gconu,user_name,password;%>
 
 
-	<% 	 name=request.getParameter("name");
+	<% 	
+	    id=request.getParameter("id");
+		name=request.getParameter("name");
 		 //age=Integer.parseInt(request.getParameter("age"));
 		email=request.getParameter("email");
+		dept=request.getParameter("dept");
+		sesion=request.getParameter("sesion");
+		conu=request.getParameter("conu");
+		gname=request.getParameter("gname");
+		gconu=request.getParameter("gconu");
 		 user_name=request.getParameter("user_name");
 		 password=request.getParameter("password");
 
@@ -30,13 +37,19 @@
 			 // PrintWriter pw=response.getWriter();
 		
 			 
-            PreparedStatement ps=con.prepareStatement("insert into  STUDENT values(?,?,?,?)");
+            PreparedStatement ps=con.prepareStatement("insert into  STUDENT values(?,?,?,?,?,?,?,?,?,?)");
             //System.out.println(name+email+user_name+password);
-            ps.setString(1,name);
+            ps.setString(1,id);
+            ps.setString(2,name);
            // ps.setInt(2,age);
-            ps.setString(2,email);
-            ps.setString(3,user_name);
-            ps.setString(4,password);
+            ps.setString(3,email);
+            ps.setString(4,dept);
+            ps.setString(5,sesion);
+            ps.setString(6,conu);
+            ps.setString(7,gname);
+            ps.setString(8,gconu);
+            ps.setString(9,user_name);
+            ps.setString(10,password);
             
             ps.execute();
             pw.println("Insert....");
