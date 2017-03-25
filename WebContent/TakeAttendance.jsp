@@ -71,10 +71,10 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li class="active"><a href="index.html"><i
+				<li><a href="index.html"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li><a href="TakeAttendance.jsp"><i
-						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
+				<li class="active"><a href=""><i
+						class="fa fa-fw fa-bar-chart-o"></i> Take Attendance</a></li>
 				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
 						Tables</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
@@ -104,141 +104,18 @@
 
 				<!-- Page Heading -->
 				<div class="row">
-					<div class="col-lg-12">
-						<h1 class="page-header">
-							Dashboard <small>Statistics Overview</small>
-						</h1>
-						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-dashboard"></i> Dashboard
-							</li>
-						</ol>
+					
 					</div>
 				</div>
 				<!-- /.row -->
 
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="alert alert-info alert-dismissable">
-							<button type="button" class="close" data-dismiss="alert"
-								aria-hidden="true">&times;</button>
-							<i class="fa fa-info-circle"></i> <strong>Like SB Admin?</strong>
-							Try out <a
-								href="http://startbootstrap.com/template-overviews/sb-admin-2"
-								class="alert-link">SB Admin 2</a> for additional features!
-						</div>
-					</div>
+					
 				</div>
 				<!-- /.row -->
 
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-comments fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">26</div>
-										<div>New Comments!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-tasks fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">12</div>
-										<div>New Tasks!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-shopping-cart fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">124</div>
-										<div>New Orders!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-support fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-support fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
+					
 				</div>
 				<!-- /.row -->
 
