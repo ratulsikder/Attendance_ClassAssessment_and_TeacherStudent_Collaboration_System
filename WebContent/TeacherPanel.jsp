@@ -58,8 +58,8 @@
 
 
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
-				data-toggle="dropdown"><i class="fa fa-user"></i>Hi.... <b
-					class="caret"></b></a>
+				data-toggle="dropdown"><i class="fa fa-user"></i><h3>Hi.... <%=name %></h3><b
+					class="caret"></b></a>.
 				<ul class="dropdown-menu">
 
 
