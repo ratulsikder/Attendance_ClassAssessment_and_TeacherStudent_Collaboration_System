@@ -64,10 +64,8 @@
 
 
 					<li class="divider"></li>
-					<li><a href="logout.java"><i class="fa fa-fw fa-power-off"></i>
+					<li><a href="logout"><i class="fa fa-fw fa-power-off"></i>
 							Log Out</a></li>
-					<li><a href="LogOut.jsp"><i class="fa fa-fw fa-power-off"></i>Logout</a>
-					</li>
 				</ul></li>
 		</ul>
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
