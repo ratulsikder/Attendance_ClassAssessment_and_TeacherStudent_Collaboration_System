@@ -1,28 +1,38 @@
-<%-- Begin Project Login Authenticator --%>
-<%@page import="java.io.PrintWriter"%>
-<%
-	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
-
-	if (email == null) {
-		PrintWriter pw = response.getWriter();
-		pw.println("<font color=red size=5>You are not logged in.</font>");
-		response.setHeader("Refresh", "3;url=index.jsp");
-		throw new javax.servlet.jsp.SkipPageException();
-
-	}
-	;
-%>
-<%-- End Project Login Authenticator --%>
-
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<!DOCTYPE html>
+<%!String year, department, course, date;%>
+<%
+	department = request.getParameter("department");
+	year = request.getParameter("year");
+	course = request.getParameter("course");
+	date = (String) request.getParameter("date");
+
+	String table_name = department + year + course;
+
+	ServletContext sc = getServletContext();
+	Connection con = (Connection) sc.getAttribute("MyConn");
+	PrintWriter pw = response.getWriter();
+
+	try {
+
+		PreparedStatement ps = con
+				.prepareStatement("alter table " + table_name + " add( \"" + date + "\" NUMBER NULL)");
+		ps.execute();
+
+	} catch (Exception ex) {
+		System.out.println(ex);
+		pw.println("<font color=red size=5>Attendance Already Taken for " + date + ".</font>");
+		response.setHeader("Refresh", "3;url=TakeAttendance.jsp");
+		throw new javax.servlet.jsp.SkipPageException();
+	}
+%>
+
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -202,40 +212,7 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Select department, year, course and
-							date:</h1>
-						<ol class="breadcrumb">
-						<form method="post" name="f1" action="AttendanceFetcher.jsp">
-						<li style="float:left;"><select name="department">
-									<option value="CSE">CSE</option>
-									<option value="EEE">EEE</option>
-									<option value="MAT">MAT</option>
-									<option value="ACCE">ACCE</option>
-							</select></li>
-							
-							<li style="float:left;"><select name="year" >
-									<option value="2017">2017</option>
-									<option value="2016">2016</option>
-									<option value="2015">2015</option>
-									<option value="2014">2014</option>
-							</select></li>
-							
-							<li style="float:left;"><select name="course">
-									<option value="CSE154">CSE154</option>
-									<option value="EEE256">EEE256</option>
-									<option value="MAT112">MAT112</option>
-									<option value="CSE402">CSE402</option>
-							</select></li>
-							
-							<li style="float:left;">
-							<input type="date" name="date" >
-							</li>
-							
-							<li>
-							<input type="submit" name="go" value="GO" onclick="" >
-							</li>
-							</form>
-						</ol>
+						<h1 class="page-header">Mark Attendance</h1>
 					</div>
 				</div>
 				<!-- /.row -->
@@ -243,201 +220,37 @@
 				<!-- Flot Charts -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="page-header">Flot Charts</h2>
-						<p class="lead">
-							Flot is a pure JavaScript plotting library for jQuery, with a
-							focus on simple usage, attractive looks and interactive features.
-							For full usage instructions and documentation for Flot Charts,
-							visit <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.
-						</p>
-					</div>
-				</div>
-				<!-- /.row -->
+						<form action="AttendanceInsert.jsp" name="attendance_list" method="post">
+							<%
+								try {
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-bar-chart-o"></i> Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-line-chart"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
+									PreparedStatement ps2 = con.prepareStatement("Select * from " + table_name + "  ORDER BY STUDENT_ID");
 
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Pie Chart Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-pie-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-8">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Multiple Axes Line Graph
-									Example with Tooltips and Raw Data
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-multiple-axes-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
+									ResultSet rs = ps2.executeQuery();
 
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Moving Line Chart
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-moving-line-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Bar Graph with Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-bar-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
+									while (rs.next()) {
+							%>
+							<%=rs.getString("student_id")%>: <input type="checkbox"
+								class="student_list"><br />
 
-				<!-- Morris Charts -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="page-header">Morris Charts</h2>
-						<p class="lead">
-							Morris.js is a very simple API for drawing line, bar, area and
-							donut charts. For full usage instructions and documentation for
-							Morris.js charts, visit <a
-								href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>.
-						</p>
-					</div>
-				</div>
-				<!-- /.row -->
+							<%
+								}
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-bar-chart-o"></i> Area Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-area-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
+								} catch (Exception ex) {
+									System.out.println(ex);
+								}
+							%>
+							<input type="submit" value="SUBMIT">
 
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Donut Chart Example
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-donut-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-line-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Bar Graph Example
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-bar-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
-				<!-- /.row -->
+
+
+
+
+
+
 
 			</div>
 			<!-- /.container-fluid -->
