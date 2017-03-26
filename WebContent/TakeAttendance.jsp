@@ -33,7 +33,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin - Bootstrap Admin Template</title>
+<title>Take Attendance...</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -71,96 +71,19 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">SB Admin</a>
+				<a class="navbar-brand" href="#"> </a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
+				
+				
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
-						class="caret"></b></a>
-					<ul class="dropdown-menu message-dropdown">
-						<li class="message-preview"><a href="#">
-								<div class="media">
-									<span class="pull-left"> <img class="media-object"
-										src="http://placehold.it/50x50" alt="">
-									</span>
-									<div class="media-body">
-										<h5 class="media-heading">
-											<strong>John Smith</strong>
-										</h5>
-										<p class="small text-muted">
-											<i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
-										</p>
-										<p>Lorem ipsum dolor sit amet, consectetur...</p>
-									</div>
-								</div>
-						</a></li>
-						<li class="message-preview"><a href="#">
-								<div class="media">
-									<span class="pull-left"> <img class="media-object"
-										src="http://placehold.it/50x50" alt="">
-									</span>
-									<div class="media-body">
-										<h5 class="media-heading">
-											<strong>John Smith</strong>
-										</h5>
-										<p class="small text-muted">
-											<i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
-										</p>
-										<p>Lorem ipsum dolor sit amet, consectetur...</p>
-									</div>
-								</div>
-						</a></li>
-						<li class="message-preview"><a href="#">
-								<div class="media">
-									<span class="pull-left"> <img class="media-object"
-										src="http://placehold.it/50x50" alt="">
-									</span>
-									<div class="media-body">
-										<h5 class="media-heading">
-											<strong>John Smith</strong>
-										</h5>
-										<p class="small text-muted">
-											<i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
-										</p>
-										<p>Lorem ipsum dolor sit amet, consectetur...</p>
-									</div>
-								</div>
-						</a></li>
-						<li class="message-footer"><a href="#">Read All New
-								Messages</a></li>
-					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-bell"></i> <b
-						class="caret"></b></a>
-					<ul class="dropdown-menu alert-dropdown">
-						<li><a href="#">Alert Name <span
-								class="label label-default">Alert Badge</span></a></li>
-						<li><a href="#">Alert Name <span
-								class="label label-primary">Alert Badge</span></a></li>
-						<li><a href="#">Alert Name <span
-								class="label label-success">Alert Badge</span></a></li>
-						<li><a href="#">Alert Name <span class="label label-info">Alert
-									Badge</span></a></li>
-						<li><a href="#">Alert Name <span
-								class="label label-warning">Alert Badge</span></a></li>
-						<li><a href="#">Alert Name <span
-								class="label label-danger">Alert Badge</span></a></li>
-						<li class="divider"></li>
-						<li><a href="#">View All</a></li>
-					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
+					data-toggle="dropdown"><i class="fa fa-user"></i> <%= name %> <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-						</li>
-						<li><a href="#"><i class="fa fa-fw fa-envelope"></i>
-								Inbox</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-						</li>
+						
 						<li class="divider"></li>
-						<li><a href="#"><i class="fa fa-fw fa-power-off"></i> Log
+						<li><a href="logout"><i class="fa fa-fw fa-power-off"></i> Log
 								Out</a></li>
 					</ul></li>
 			</ul>
@@ -241,204 +164,19 @@
 				<!-- /.row -->
 
 				<!-- Flot Charts -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="page-header">Flot Charts</h2>
-						<p class="lead">
-							Flot is a pure JavaScript plotting library for jQuery, with a
-							focus on simple usage, attractive looks and interactive features.
-							For full usage instructions and documentation for Flot Charts,
-							visit <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.
-						</p>
-					</div>
-				</div>
+				
 				<!-- /.row -->
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-bar-chart-o"></i> Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-line-chart"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			
 				<!-- /.row -->
 
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Pie Chart Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-pie-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-8">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Multiple Axes Line Graph
-									Example with Tooltips and Raw Data
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-multiple-axes-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<!-- /.row -->
 
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Moving Line Chart
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-moving-line-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Bar Graph with Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div class="flot-chart">
-									<div class="flot-chart-content" id="flot-bar-chart"></div>
-								</div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<!-- /.row -->
 
-				<!-- Morris Charts -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="page-header">Morris Charts</h2>
-						<p class="lead">
-							Morris.js is a very simple API for drawing line, bar, area and
-							donut charts. For full usage instructions and documentation for
-							Morris.js charts, visit <a
-								href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>.
-						</p>
-					</div>
-				</div>
-				<!-- /.row -->
-
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-bar-chart-o"></i> Area Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-area-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
-
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Donut Chart Example
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-donut-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Line Graph Example with
-									Tooltips
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-line-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right"></i> Bar Graph Example
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-bar-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /.row -->
-
+				
 			</div>
 			<!-- /.container-fluid -->
 
