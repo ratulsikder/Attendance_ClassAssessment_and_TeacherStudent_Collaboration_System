@@ -6,32 +6,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%!String year, department, course, date;%>
-<%
-	
-	
-	Enumeration paramNames = request.getParameterNames();
-while(paramNames.hasMoreElements()) 
-{
-    String paramName = (String)paramNames.nextElement();
-}
-	
-	String table_name = department + year + course;
 
+<%
 	ServletContext sc = getServletContext();
 	Connection con = (Connection) sc.getAttribute("MyConn");
 	PrintWriter pw = response.getWriter();
 
-	try {
+	HttpSession hs = request.getSession();
+	String table_name = (String) hs.getAttribute("table_name");
+	String date = (String) hs.getAttribute("date");
 
-		PreparedStatement ps = con
-				.prepareStatement("alter table " + table_name + " add( \"" + date + "\" NUMBER NULL)");
-		ps.execute();
-
-	} catch (Exception ex) {
-		System.out.println(ex);
-		pw.println("<font color=red size=5>Attendance Already Taken for " + date + ".</font>");
-		response.setHeader("Refresh", "3;url=TakeAttendance.jsp");
-		throw new javax.servlet.jsp.SkipPageException();
+	Enumeration paramNames = request.getParameterNames();
+	while (paramNames.hasMoreElements()) {
+		String paramName = (String) paramNames.nextElement();
+		PreparedStatement ps = con.prepareStatement("UPDATE " + table_name + " SET \"" + date + "\" = 1 WHERE student_id = " + paramName);
+		try {
+			ps.execute();
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
+	hs.removeAttribute("table_name");
+	hs.removeAttribute("date");
+	
+	pw.println("<font color=green size=5>Operation Successfull.</font>");
+	response.setHeader("Refresh", "3;url=TeacherPanel.jsp");
 %>

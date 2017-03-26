@@ -220,7 +220,8 @@
 				<!-- Flot Charts -->
 				<div class="row">
 					<div class="col-lg-12">
-						<form action="AttendanceInsert.jsp" name="attendance_list" method="post">
+						<form action="AttendanceInsert.jsp" name="attendance_list"
+							method="post">
 							<%
 								try {
 
@@ -231,7 +232,8 @@
 									while (rs.next()) {
 							%>
 							<%=rs.getString("student_id")%>: <input type="checkbox"
-								class="student_list"><br />
+								class="student_list" name="<%=rs.getString("student_id")%>"
+								value="1"><br />
 
 							<%
 								}
@@ -239,6 +241,11 @@
 								} catch (Exception ex) {
 									System.out.println(ex);
 								}
+
+								//Inserting table name into session for next page attendance insertion
+								HttpSession hs = request.getSession();
+								hs.setAttribute("table_name", table_name);
+								hs.setAttribute("date", date);
 							%>
 							<input type="submit" value="SUBMIT">
 
