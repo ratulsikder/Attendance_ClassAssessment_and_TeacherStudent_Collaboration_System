@@ -16,6 +16,7 @@
 	String course_code = request.getParameter("course_code");
 	String course_name = request.getParameter("course_name");
 	String course_year = request.getParameter("course_year");
+	String table_name = department_name+course_year+course_code;
 	
 	HttpSession hs = request.getSession();
 	String email = (String)hs.getAttribute("email");
@@ -30,9 +31,12 @@
         ps.setString(4,department_name);
         
         ps.setString(5,email);
-        ps.setString(6,department_name+course_year+course_code);
+        ps.setString(6,table_name);
         
         ps.execute();
+      
+        PreparedStatement ps2=con.prepareStatement("CREATE table \""+table_name+"\" (\"STUDENT_ID\" VARCHAR2(20), primary key (\"STUDENT_ID\"))");
+        ps2.execute();
         
         pw.println("<font color=green size=5>Operation Successfull.</font>");
         response.setHeader("Refresh", "3;url=TeacherPanel.jsp");
