@@ -1,3 +1,4 @@
+<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -18,17 +19,17 @@
 	Connection con = (Connection) sc.getAttribute("MyConn");
 	PrintWriter pw = response.getWriter();
 
+	//Checking for existing attendance
 	try {
 
-		PreparedStatement ps = con
-				.prepareStatement("alter table " + table_name + " add( \"" + date + "\" NUMBER NULL)");
+		PreparedStatement ps = con.prepareStatement("SELECT \""+date+"\" FROM \""+table_name+"\"");
 		ps.execute();
-
-	} catch (Exception ex) {
-		System.out.println(ex);
 		pw.println("<font color=red size=5>Attendance Already Taken for " + date + ".</font>");
 		response.setHeader("Refresh", "3;url=TakeAttendance.jsp");
 		throw new javax.servlet.jsp.SkipPageException();
+
+	} catch (SQLException ex) {
+		System.out.println(ex);
 	}
 %>
 

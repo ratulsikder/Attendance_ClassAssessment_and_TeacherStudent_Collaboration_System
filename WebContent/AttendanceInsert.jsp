@@ -15,6 +15,17 @@
 	HttpSession hs = request.getSession();
 	String table_name = (String) hs.getAttribute("table_name");
 	String date = (String) hs.getAttribute("date");
+	
+	try {
+
+		PreparedStatement ps = con
+				.prepareStatement("alter table " + table_name + " add( \"" + date + "\" NUMBER NULL)");
+		ps.execute();
+
+	} catch (Exception ex) {
+		System.out.println(ex);
+	}
+	
 
 	Enumeration paramNames = request.getParameterNames();
 	while (paramNames.hasMoreElements()) {

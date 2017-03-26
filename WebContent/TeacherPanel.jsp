@@ -70,7 +70,7 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li><a href="#"><i
+				<li class="active"><a href="#"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
@@ -160,14 +160,14 @@
 										<i class="fa fa-tasks fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">12</div>
-										<div>New Tasks!</div>
+										<div class="huge">Course</div>
+										<div>New Course</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="NewCourse.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">Start New Course</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
