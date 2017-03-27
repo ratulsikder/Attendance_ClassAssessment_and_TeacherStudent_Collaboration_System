@@ -34,7 +34,7 @@
 <meta name="author" content="">
 
 <title>Student Details.</title>
-<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="TeacherPanelStyle.css" type="text/css" />
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -100,8 +100,8 @@
 							Dashboard</a></li>
 					<li class="active"><a href="Selectidforview.jsp"><i
 							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-					<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
-							Tables</a></li>
+					<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+							Self Info</a></li>
 					<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 							Forms</a></li>
 					<li><a href="bootstrap-elements.html"><i
@@ -130,74 +130,37 @@
 
 				<!-- Page Heading -->
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="container">
+					<br>
+						<br>
+						<br>
+						<br>
+						<br><br>
+						
+						<br>
+						<br>
+						<form id="contact" action="ViewStudentDetails.jsp" method="post">
+							<h3>Fill the ID Number</h3>
 
-						
-						
-						
-						 <center>
-									</br>
-									</br>
-									<h3>Insert Id for Information of Student:</h3>
-									
-									<div id="login-form">
-									<form method="post" name="fl"  action="ViewStudentDetails.jsp" >
-									<table align="center" width="50%" border="0">
-									
-									<tr>
-									<td>
-									
-									</td>
-									
-									
-									</tr>
-									
-										
-									
-									
-								
-									
-									
-									
-								
-								<tr>
-									<td><h3>Student ID:</h3>
-									<input type="text" name="id" >
-									</td>
-									
-									</tr>
-								
-									<tr>
-									<td>
-									<h3></h3>
-									<h3></h3>
-									<button type="submit" name="go">GO</button>
-									</td>
-									
-									</tr>
-									<tr>
-									
-									<td>
-									<a></a>
-									
-									</td>
-									</tr>
-											
-								
-									
-									</table>
-									<br>
-									</form>
-									</div>
-									</center>
-						
-						
-											<br>
-											<br>
-											<br>
-											<br><br>
-											<br>
-						
+							<fieldset>
+								<input placeholder="Student ID" type="text"
+									tabindex="1" name="id" required autofocus>
+							</fieldset>
+							
+							<fieldset>
+								<button name="submit" type="submit" >Submit</button>
+							</fieldset>
+
+						</form>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+					</div>
 						
 						
 						

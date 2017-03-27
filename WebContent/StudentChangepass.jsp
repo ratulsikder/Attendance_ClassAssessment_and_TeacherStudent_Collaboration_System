@@ -27,7 +27,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Teacher Panel</title>
+<title>Student Panel</title>
+<link rel="stylesheet" href="TeacherPanelStyle.css" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -74,10 +75,10 @@
 			<ul class="nav navbar-nav side-nav">
 				<li ><a href="#"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li class="active"><a href="Selectidforview.jsp"><i
+				<li ><a href="Selectidforview.jsp"><i
 							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li><a href=""ViewOwnDetails.jsp"l"><i class="fa fa-fw fa-table"></i>
-						Tables</a></li>
+				<li class="active"><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Self Info</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 						Forms</a></li>
 				<li><a href="bootstrap-elements.html"><i
@@ -106,24 +107,43 @@
 				<!-- /.row -->
 
 				<div class="row">
-					<div class="col-lg-12">
-						 <h2>Student's Information</h2>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <td><h3>Attributes:</h3></td>
-                                       
-                                        <td><h3>Details:</h3></td>
-                                    </tr>
-                                </thead>
-                                
+					<div class="container">
+						 <h3>Change<%= name %>'s Information</h3>
+                       
+  							<form id="contact" action="InfoChangeStudent.jsp" method="post">
+							<h4 style="color:blue">Fill the Form</h4>
+
+							<fieldset>
+							Student Id:
+								<input placeholder="Student ID" type="text"
+									tabindex="1" name="id" required autofocus>
+							</fieldset>
+							<fieldset>
+							Student Name:
+								<input placeholder="Student Name" type="text"
+									tabindex="2" name="name" required autofocus>
+							</fieldset>
+							<fieldset>
+							Student Email:
+								<input placeholder="Student Email" type="text"
+									tabindex="3" name="email" required autofocus>
+							</fieldset>
+							<fieldset>
+							Student PassWord:
+								<input placeholder="Student Password" type="password"
+									tabindex="4" name="pass" required autofocus>
+							</fieldset>
+							
+							<fieldset>
+								<button name="submit" type="submit" >Submit</button>
+							</fieldset>
+
+						</form>
   
-  
-  <% String id;%>
+
   
    <% 
-   id = request.getParameter("id");
+  
 
 try
 {
@@ -131,64 +151,16 @@ try
 	
 	Connection con=(Connection)sc.getAttribute("MyConn");
 	
-    PreparedStatement ps=con.prepareStatement("Select * from STUDENT where id=? ");
-    ps.setString(1, id);
+    PreparedStatement ps=con.prepareStatement("UPDATE STUDENT set email=?,pass=?  where email='" + email + "'" );
+ 	 ps.setString(3, email);
+
     
-    
-    ResultSet rs=ps.executeQuery();
+   	ResultSet rs=ps.executeQuery();
     while(rs.next())
     {
     	%>               
                                 
-                                
-                                <tbody>
-                                    <tr class="active">
-                                        <td><h4>Student Id</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(1) %></h4></td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td><h4>Name</h4></td>
-                                       
-                                        <td><h4><%=rs.getString(2) %></h4></td>
-                                    </tr>
-                                    <tr class="warning">
-                                        <td><h4>Email</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(3) %></h4></td>
-                                    </tr>
-                                    <tr class="danger">
-                                        <td><h4>Department</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(4) %></h4></td>
-                                    </tr>
-                                    
-                                     <tr class="active">
-                                        <td><h4>Session</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(5) %></h4></td>
-                                    </tr>
-                                    
-                                     <tr class="success">
-                                        <td><h4>Contact Number</h4></td>
-                                       
-                                        <td><h4><%=rs.getString(6) %></h4></td>
-                                    </tr>
-                                    
-                                     <tr class="danger">
-                                        <td><h4>Guardian Name</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(7) %></h4></td>
-                                    </tr>
-                                    
-                                     <tr class="active">
-                                        <td><h4>Guardian Contact Number</h4></td>
-                                        
-                                        <td><h4><%=rs.getString(8) %></h4></td>
-                                    </tr>
-                                  
-                                    
-                                </tbody>
+               
                                 <%
     }
 }catch(Exception ex)

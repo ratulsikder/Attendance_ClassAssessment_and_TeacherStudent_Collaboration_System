@@ -74,10 +74,10 @@
 			<ul class="nav navbar-nav side-nav">
 				<li ><a href="#"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li class="active"><a href="Selectidforview.jsp"><i
+				<li ><a href="Selectidforview.jsp"><i
 							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li><a href=""ViewOwnDetails.jsp"l"><i class="fa fa-fw fa-table"></i>
-						Tables</a></li>
+				<li class="active"><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Self Info</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 						Forms</a></li>
 				<li><a href="bootstrap-elements.html"><i
@@ -107,7 +107,7 @@
 
 				<div class="row">
 					<div class="col-lg-12">
-						 <h2>Student's Information</h2>
+						 <h2><%= name %>'s Information</h2>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover table-striped">
                                 <thead>
@@ -120,10 +120,10 @@
                                 
   
   
-  <% String id;%>
+
   
    <% 
-   id = request.getParameter("id");
+ 
 
 try
 {
@@ -131,8 +131,8 @@ try
 	
 	Connection con=(Connection)sc.getAttribute("MyConn");
 	
-    PreparedStatement ps=con.prepareStatement("Select * from STUDENT where id=? ");
-    ps.setString(1, id);
+    PreparedStatement ps=con.prepareStatement("Select * from STUDENT where email='" + email + "'" );
+  
     
     
     ResultSet rs=ps.executeQuery();
@@ -186,9 +186,16 @@ try
                                         
                                         <td><h4><%=rs.getString(8) %></h4></td>
                                     </tr>
+                                     <tr class="success">
+                                        <td><h4>Password</h4></td>
+                                       
+                                        <td><h4><%=rs.getString(10) %></h4></td>
+                                    </tr>
                                   
                                     
                                 </tbody>
+                                
+                                <a href="StudentChangepass.jsp">Change Details!!</a>
                                 <%
     }
 }catch(Exception ex)

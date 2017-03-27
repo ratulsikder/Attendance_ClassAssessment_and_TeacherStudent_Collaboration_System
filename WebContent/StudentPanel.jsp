@@ -74,10 +74,10 @@
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="Selectidforview.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
-						Tables</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Self Info</a></li>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+						change info..</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i
