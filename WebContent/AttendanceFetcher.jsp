@@ -18,8 +18,21 @@
 	ServletContext sc = getServletContext();
 	Connection con = (Connection) sc.getAttribute("MyConn");
 	PrintWriter pw = response.getWriter();
-	
 
+	//Checking table existence
+	try {
+
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM \"" + table_name + "\"");
+		ps.execute();
+
+	} catch (SQLException ex) {
+		System.out.println(ex);
+		pw.println("<font color=red size=5>Course: " + course + ", Departmant: " + department + ", Year: "
+				+ year
+				+ " is not found.</font><br><font color=green size=5> Please start the course first.</font>");
+		response.setHeader("Refresh", "7;url=TeacherPanel.jsp");
+		throw new javax.servlet.jsp.SkipPageException();
+	}
 
 	//Checking for existing attendance
 	try {
@@ -31,11 +44,6 @@
 		throw new javax.servlet.jsp.SkipPageException();
 
 	} catch (SQLException ex) {
-		System.out.println(ex);
-		pw.println("<font color=red size=5>Course: "+ course + ", Departmant: "+department+", Year: "+year+" is not found.</font><br><font color=green size=5> Please start the course first.</font>");
-		response.setHeader("Refresh", "7;url=TeacherPanel.jsp");
-		throw new javax.servlet.jsp.SkipPageException();
-	} catch(JspException ex){
 		System.out.println(ex);
 	}
 %>
@@ -184,8 +192,8 @@
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li><a href="TeacherPanel.jsp"><i class="fa fa-fw fa-dashboard"></i>
-							Dashboard</a></li>
+					<li><a href="TeacherPanel.jsp"><i
+							class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
 					<li class="active"><a href=""><i
 							class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
 					<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
