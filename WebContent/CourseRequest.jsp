@@ -1,7 +1,4 @@
 <%-- Begin Project Login Authenticator --%>
-<%@page import="java.util.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.text.DateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.io.PrintWriter"%>
 <%
@@ -29,7 +26,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Teacher Panel</title>
+<title>Student Panel</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -42,7 +39,6 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
 <link rel="stylesheet" href="TeacherPanelStyle.css" type="text/css" />
-
 </head>
 <body>
 	<div id="wrapper">
@@ -57,7 +53,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Teacher </a>
+			<a class="navbar-brand" href="#">Student</a>
 		</div>
 		<!-- Top Menu Items -->
 		<ul class="nav navbar-right top-nav">
@@ -76,14 +72,14 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li><a href="TeacherPanel.jsp"><i
+				<li class="active"><a href="#"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li class="active"><a href="TakeAttendance.jsp"><i
-						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
-				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
-						Tables</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i
+						class="fa fa-fw fa-table"></i> Self Info</a></li>
+				<li><a href="StudentChangepass.jsp"><i
+						class="fa fa-fw fa-edit"></i> change info..</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i
@@ -112,101 +108,35 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Take Attendance <small></small>
+							Course Request <small>Make a course request to the teacher</small>
 						</h1>
 					</div>
 				</div>
 				<!-- /.row -->
-				<%
-					ServletContext sc = getServletContext();
-					Connection con = (Connection) sc.getAttribute("MyConn");
-					PrintWriter pw = response.getWriter();
-					
-					Date date = new Date();
-				    String DATE_FORMAT = "yyyy-MM-dd";
-				    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-				%>
 				<div class="row">
-					<div class="container" style="max-width: 30%">
-						<form id="contact" action="AttendanceFetcher.jsp" method="post">
-							<h3>Select the course</h3>
+					<div class="container">
+						<form id="contact" action="CourseRequestInsert.jsp" method="post">
+							<h3>Fill the Course Details</h3>
 
 							<fieldset>
-								Department: <select name="department" required autofocus
-									style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (department) department from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
-
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("department")%>"><%=rs.getString("department")%></option>
-
-									<%
-										}
-
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-								</select>
+								<input placeholder="Department name in short form" type="text"
+									tabindex="1" name="department_name" required autofocus>
 							</fieldset>
 							<fieldset>
-								Year: <select name="year" required style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (course_year) course_year from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
-
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("course_year")%>"><%=rs.getString("course_year")%></option>
-
-									<%
-										}
-
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-
-								</select>
-							</fieldset>
-							<fieldset>
-								Course: <select name="course" required style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (course_code) course_code from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
-
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("course_code")%>"><%=rs.getString("course_code")%></option>
-
-									<%
-										}
-
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-								</select>
-							</fieldset>
-							<fieldset>
-								Date:<input style="float: right" type="date" value=<%=(String)sdf.format(date) %> tabindex="3" name="date" required>
+								<input placeholder="Course Code" type="text" tabindex="2"
+									name="course_code" required>
 							</fieldset>
 							
+							<fieldset>
+								Course Taking Year:<input style="float: right" type="number"
+									value=<%=(int) Calendar.getInstance().get(Calendar.YEAR)%>
+									tabindex="3" name="course_year" required>
+							</fieldset>
+
 
 							<fieldset>
 								<button name="submit" type="submit" id="contact-submit"
-									data-submit="...Sending">Submit</button>
+									data-submit="...Sending">Make Request</button>
 							</fieldset>
 
 						</form>

@@ -161,13 +161,13 @@
 									</div>
 									<div class="col-xs-9 text-right">
 										<div class="huge">Course</div>
-										<div>New Course</div>
+										<div>Join New Course</div>
 									</div>
 								</div>
 							</div>
-							<a href="NewCourse.jsp">
+							<a href="CourseRequest.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">Start New Course</span> <span
+									<span class="pull-left">Make a request to the teacher</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
