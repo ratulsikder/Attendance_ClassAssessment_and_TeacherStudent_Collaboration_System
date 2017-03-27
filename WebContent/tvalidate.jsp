@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Teacher Panel</title>
 </head>
 <body>
 	<%!String email, pass;%>
@@ -40,6 +40,7 @@
 				response.setHeader("Refresh", "3;url=tlog.jsp");
 	%>
 	<Font color=red size=5>Login failed. Please try again.</Font>
+	 <%@include file="tlog.jsp" %>
 
 	<%
 		}

@@ -17,15 +17,21 @@
 LOG IN FORM
 </h3>
 <div id="login-form">
-<form method="post" action="StudentPage.jsp" name="f1">
+<form method="post" action="StudentValidate.jsp" name="f1">
 <table align="center" width="30%" border="0">
-<tr>
-<td><h3>USER NAME:</h3></br><input type="text" name="user_name" placeholder="User name" required /></td>
-</tr>
-<tr>
-<td><h3>PASSWORD:</h3></br><input type="password" name="password" placeholder="password" required /></td>
-</tr>
-<tr>
+					<tr>
+						<td><h3>EMAIL:</h3>
+							</br>
+						<input type="text" name="email" placeholder="Registered Email"
+							required /></td>
+					</tr>
+					<tr>
+						<td><h3>PASSWORD:</h3>
+							</br>
+						<input type="password" name="password" placeholder="password" required /></td>
+					</tr>
+					<tr>
+
 <td><button type="submit" name="btn-login">Log in</button></td>
 </tr>
 <tr>

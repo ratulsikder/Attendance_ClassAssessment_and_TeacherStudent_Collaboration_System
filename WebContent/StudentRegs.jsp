@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.Connection"%>
@@ -41,7 +42,6 @@
             //System.out.println(name+email+user_name+password);
             ps.setString(1,id);
             ps.setString(2,name);
-           // ps.setInt(2,age);
             ps.setString(3,email);
             ps.setString(4,dept);
             ps.setString(5,sesion);
@@ -52,11 +52,27 @@
             ps.setString(10,password);
             
             ps.execute();
-            pw.println("Insert....");
             
-            
-            
-		
+            ResultSet rs=ps.executeQuery();
+            if(rs.next())
+            {
+         	 %>
+         	 <center><br><Font color=green size=5 > <%=name %> .... Registration is Successful....</Font><br></center>
+         	<%@include file="Studentlog.jsp"  %>
+         	
+         
+         		 
+         	 <% 
+            }
+            else
+            {	
+         	   %>
+         		 <Font color=red size=5 >Ragistration is Failed....</Font>
+         		
+         		 <%@include file="StdReg.jsp" %>
+         		 <%
+
+            }
 		
 		}
 		catch(Exception ex)

@@ -1,32 +1,40 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Panel</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%!String email, pass;%>
-	<%
-		email = request.getParameter("email");
-		pass = request.getParameter("pass");
 
-		try {
+<%!String email, password;%>
+<%
+email = request.getParameter("email");
+password = request.getParameter("password");
 
-			ServletContext sc = getServletContext();
+try
+{
+	
+	
+	ServletContext sc = getServletContext();
 
-			Connection con = (Connection) sc.getAttribute("MyConn");
+	Connection con = (Connection) sc.getAttribute("MyConn");
 
-			PreparedStatement ps = con.prepareStatement("Select * from STUDENT where email=? and pass=? ");
+	PreparedStatement ps = con.prepareStatement("Select * from STUDENT where email=? and password=? ");
 
-			ps.setString(1, email);
-			ps.setString(2, pass);
-			ps.execute();
-			HttpSession hs = request.getSession();
+	ps.setString(1, email);
+	ps.setString(2, password);
+	ps.execute();
+
+	 // PrintWriter pw=response.getWriter();
+	
+   //  pw.println("insert...");
+   HttpSession hs = request.getSession();
 
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
@@ -39,15 +47,21 @@
 			} else {
 				response.setHeader("Refresh", "3;url=Studentlog.jsp");
 	%>
-	<Font color=red size=5>Login failed. Please try again.</Font>
+	<center><Font color=red size=5>Login failed. Please try again.</Font></center>
 	 <%@include file="Studentlog.jsp" %>
 
 	<%
 		}
 
-		} catch (Exception ex) {
-			System.out.println(ex);
-		}
-	%>
+	
+}
+catch (Exception ex) {
+	System.out.println(ex);
+}
+
+
+%>
+
+
 </body>
 </html>
