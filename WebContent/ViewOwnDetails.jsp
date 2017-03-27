@@ -27,7 +27,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Teacher Panel</title>
+<title>Student Panel</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -53,7 +53,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Teacher </a>
+				<a class="navbar-brand" href="#">Student </a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -72,12 +72,14 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li ><a href="#"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li ><a href="Selectidforview.jsp"><i
-							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li class="active"><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-						Self Info</a></li>
+				<li class="active"><a href="StudentPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Own Information</a></li>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+						change info..</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 						Forms</a></li>
 				<li><a href="bootstrap-elements.html"><i
@@ -112,9 +114,9 @@
                             <table class="table table-bordered table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <td><h3>Attributes:</h3></td>
+                                        <td><h4>Attributes:</h4></td>
                                        
-                                        <td><h3>Details:</h3></td>
+                                        <td><h4>Details:</h4></td>
                                     </tr>
                                 </thead>
                                 
@@ -143,59 +145,59 @@ try
                                 
                                 <tbody>
                                     <tr class="active">
-                                        <td><h4>Student Id</h4></td>
+                                        <td><h5>Student Id</h5></td>
                                         
-                                        <td><h4><%=rs.getString(1) %></h4></td>
+                                        <td><h5><%=rs.getString(1) %></h5></td>
                                     </tr>
                                     <tr class="success">
-                                        <td><h4>Name</h4></td>
+                                        <td><h5>Name</h5></td>
                                        
-                                        <td><h4><%=rs.getString(2) %></h4></td>
+                                        <td><h5><%=rs.getString(2) %></h5></td>
                                     </tr>
                                     <tr class="warning">
-                                        <td><h4>Email</h4></td>
+                                        <td><h5>Email</h5></td>
                                         
-                                        <td><h4><%=rs.getString(3) %></h4></td>
+                                        <td><h5><%=rs.getString(3) %></h5></td>
                                     </tr>
                                     <tr class="danger">
-                                        <td><h4>Department</h4></td>
+                                        <td><h5>Department</h5></td>
                                         
-                                        <td><h4><%=rs.getString(4) %></h4></td>
+                                        <td><h5><%=rs.getString(4) %></h5></td>
                                     </tr>
                                     
                                      <tr class="active">
-                                        <td><h4>Session</h4></td>
+                                        <td><h5>Session</h5></td>
                                         
-                                        <td><h4><%=rs.getString(5) %></h4></td>
+                                        <td><h5><%=rs.getString(5) %></h5></td>
                                     </tr>
                                     
                                      <tr class="success">
-                                        <td><h4>Contact Number</h4></td>
+                                        <td><h5>Contact Number</h5></td>
                                        
-                                        <td><h4><%=rs.getString(6) %></h4></td>
+                                        <td><h5><%=rs.getString(6) %></h5></td>
                                     </tr>
                                     
                                      <tr class="danger">
-                                        <td><h4>Guardian Name</h4></td>
+                                        <td><h5>Guardian Name</h5></td>
                                         
-                                        <td><h4><%=rs.getString(7) %></h4></td>
+                                        <td><h5><%=rs.getString(7) %></h5></td>
                                     </tr>
                                     
                                      <tr class="active">
-                                        <td><h4>Guardian Contact Number</h4></td>
+                                        <td><h5>Guardian Contact Number</h5></td>
                                         
-                                        <td><h4><%=rs.getString(8) %></h4></td>
+                                        <td><h5><%=rs.getString(8) %></h5></td>
                                     </tr>
                                      <tr class="success">
-                                        <td><h4>Password</h4></td>
+                                        <td><h5>Password</h5></td>
                                        
-                                        <td><h4><%=rs.getString(10) %></h4></td>
+                                        <td><h5><%=rs.getString(10) %></h5></td>
                                     </tr>
                                   
                                     
                                 </tbody>
                                 
-                                <a href="StudentChangepass.jsp">Change Details!!</a>
+                                <a href="StudentChangepass.jsp"><h3>Change Details!!</h3></a>
                                 <%
     }
 }catch(Exception ex)

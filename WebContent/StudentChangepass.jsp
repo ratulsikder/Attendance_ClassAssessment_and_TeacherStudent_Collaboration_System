@@ -54,7 +54,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Teacher </a>
+				<a class="navbar-brand" href="#">Student </a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -73,14 +73,14 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li ><a href="#"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li ><a href="Selectidforview.jsp"><i
-							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li class="active"><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-						Self Info</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
+				<li class="active"><a href="StudentPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Own Information</a></li>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+						change info..</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i
@@ -108,30 +108,38 @@
 
 				<div class="row">
 					<div class="container">
-						 <h3>Change<%= name %>'s Information</h3>
-                       
-  							<form id="contact" action="InfoChangeStudent.jsp" method="post">
+						 <h3>Change <%= name %>'s Information</h3>
+                       <br>
+<br>
+  							<form id="contact" action="ChangeinfoS.jsp" method="post">
 							<h4 style="color:blue">Fill the Form</h4>
 
-							<fieldset>
-							Student Id:
-								<input placeholder="Student ID" type="text"
-									tabindex="1" name="id" required autofocus>
-							</fieldset>
+							
 							<fieldset>
 							Student Name:
 								<input placeholder="Student Name" type="text"
-									tabindex="2" name="name" required autofocus>
+									tabindex="1" name="name" required autofocus>
+							</fieldset>
+							
+							<fieldset>
+							Student Contact Number:
+								<input placeholder="Student Contact Number" type="text"
+									tabindex="2" name="conno" required autofocus>
 							</fieldset>
 							<fieldset>
-							Student Email:
-								<input placeholder="Student Email" type="text"
-									tabindex="3" name="email" required autofocus>
+							Guardian Name:
+								<input placeholder="Guardian Name" type="text"
+									tabindex="3" name="gname" required autofocus>
+							</fieldset>
+							<fieldset>
+							Guardian Contact Number:
+								<input placeholder="Guardian Contact Number" type="text"
+									tabindex="4" name="gconno" required autofocus>
 							</fieldset>
 							<fieldset>
 							Student PassWord:
 								<input placeholder="Student Password" type="password"
-									tabindex="4" name="pass" required autofocus>
+									tabindex="5" name="pass" required autofocus>
 							</fieldset>
 							
 							<fieldset>
@@ -140,37 +148,12 @@
 
 						</form>
   
-
+<br>
+<br>
+<br>
+<br>
   
-   <% 
-  
-
-try
-{
-	ServletContext sc=getServletContext();
-	
-	Connection con=(Connection)sc.getAttribute("MyConn");
-	
-    PreparedStatement ps=con.prepareStatement("UPDATE STUDENT set email=?,pass=?  where email='" + email + "'" );
- 	 ps.setString(3, email);
-
-    
-   	ResultSet rs=ps.executeQuery();
-    while(rs.next())
-    {
-    	%>               
-                                
-               
-                                <%
-    }
-}catch(Exception ex)
-{
-	System.out.println(ex);
-}
-                                
-                                
-                                
-                %>
+   
                             </table>
 				<!-- /.row -->
 

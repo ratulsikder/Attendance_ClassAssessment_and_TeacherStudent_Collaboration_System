@@ -70,12 +70,12 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li class="active"><a href="#"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+				<li class="active"><a href="StudentPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
 				<li><a href="Selectidforview.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
 				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-						Self Info</a></li>
+						Own Information</a></li>
 				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
 						change info..</a></li>
 				<li><a href="bootstrap-elements.html"><i
@@ -160,14 +160,14 @@
 										<i class="fa fa-tasks fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">Course</div>
-										<div>New Course</div>
+										<div class="huge">Update</div>
+										<div>Change Information</div>
 									</div>
 								</div>
 							</div>
-							<a href="NewCourse.jsp">
+							<a href="StudentChangepass.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">Start New Course</span> <span
+									<span class="pull-left">Modify Information</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>

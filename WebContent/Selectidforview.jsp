@@ -77,7 +77,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"> </a>
+				<a class="navbar-brand" href="#"> Student</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -96,14 +96,14 @@
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li><a href="#"><i class="fa fa-fw fa-dashboard"></i>
-							Dashboard</a></li>
-					<li class="active"><a href="Selectidforview.jsp"><i
-							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-					<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-							Self Info</a></li>
-					<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-							Forms</a></li>
+					<li class="active"><a href="StudentPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Own Information</a></li>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+						change info..</a></li>
 					<li><a href="bootstrap-elements.html"><i
 							class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 					<li><a href="bootstrap-grid.html"><i

@@ -14,50 +14,7 @@
 	}
 	;
 %>
-  <% String id,name1,email1,pass;%>
-  
-   <% 
-   		id=request.getParameter("id");
-   		name1=request.getParameter("name");
-	
-	email1=request.getParameter("email");
-	
-	 pass=request.getParameter("pass");
-  
-
-try
-{	
-	
-	ServletContext sc=getServletContext();
-	
-	Connection con=(Connection)sc.getAttribute("MyConn");
-	
-    PreparedStatement ps=con.prepareStatement("UPDATE STUDENT set id=?,name=?,email=?,pass=?  where email='" + email + "'" );
-    ps.setString(1, id);
-    ps.setString(2, name1);
- 	 ps.setString(3, email1);
- 	 ps.setString(4,pass);
-
-    
-   	ResultSet rs=ps.executeQuery();
-    while(rs.next())
-    {	
-    	
-    	
-    	%>   
-    	 <center><br><Font color=green size=5 > Update is Successful....</Font><br></center>            
-                                
-               
-                                <%
-    }
-}catch(Exception ex)
-{
-	System.out.println(ex);
-}
-                                
-                                
-                                
-                %>
+ 
 
 <%-- End Project Login Authenticator --%>
 
@@ -116,14 +73,14 @@ try
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li ><a href="#"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li ><a href="Selectidforview.jsp"><i
-							class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li class="active"><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-						Self Info</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
+				<li class="active"><a href="StudentPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
+				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
+						Own Information</a></li>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+						change info..</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i
@@ -154,7 +111,50 @@ try
 			
   
 
-                            </table>
+    <% String name1,conno,pass;%>
+  
+   <% 
+   	
+   		name1=request.getParameter("name");
+	
+	conno=request.getParameter("conno");
+	
+	 pass=request.getParameter("pass");
+  
+
+try
+{	
+	
+	ServletContext sc=getServletContext();
+	
+	Connection con=(Connection)sc.getAttribute("MyConn");
+	
+    PreparedStatement ps=con.prepareStatement("UPDATE STUDENT set name=?,conu=?,pass=?  where email='" + email + "'" );
+   
+    ps.setString(1, name1);
+ 	 ps.setString(2, conno);
+ 	 ps.setString(3,pass);
+
+    
+   	ResultSet rs=ps.executeQuery();
+    while(rs.next())
+    {	
+    	
+    	
+    	%>   
+    	 <center><br><Font color=green size=5 > Update is Successful....</Font><br></center>            
+                                
+               
+                                <%
+    }
+}catch(Exception ex)
+{
+	System.out.println(ex);
+}
+                                
+                                
+                                
+                %>
 				<!-- /.row -->
 
 
