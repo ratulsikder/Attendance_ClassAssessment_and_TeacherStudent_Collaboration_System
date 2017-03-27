@@ -35,7 +35,7 @@
 		pw.println("<font color=red size=5>Course: "+ course + ", Departmant: "+department+", Year: "+year+" is not found.</font><br><font color=green size=5> Please start the course first.</font>");
 		response.setHeader("Refresh", "7;url=TeacherPanel.jsp");
 		throw new javax.servlet.jsp.SkipPageException();
-	} catch(JspException ex){
+	} catch(ArithmeticException ex){
 		System.out.println(ex);
 	}
 %>
