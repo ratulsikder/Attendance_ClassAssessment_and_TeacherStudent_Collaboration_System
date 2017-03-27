@@ -53,26 +53,14 @@
             
             ps.execute();
             
-            ResultSet rs=ps.executeQuery();
-            if(rs.next())
-            {
-         	 %>
-         	 <center><br><Font color=green size=5 > <%=name %> .... Registration is Successful....</Font><br></center>
-         	<%@include file="Studentlog.jsp"  %>
-         	
-         
-         		 
-         	 <% 
-            }
-            else
-            {	
-         	   %>
-         		 <Font color=red size=5 >Ragistration is Failed....</Font>
-         		
-         		 <%@include file="StdReg.jsp" %>
-         		 <%
-
-            }
+           ResultSet rs=ps.executeQuery();
+           if(rs.next())
+           {
+        	   %>
+        	    <center><br><Font color=green size=5 > <%=name %> .... Registration is Successful....</Font><br></center>
+        	   <%@include file="Studentlog.jsp" %>
+        	   <% 
+           }
 		
 		}
 		catch(Exception ex)

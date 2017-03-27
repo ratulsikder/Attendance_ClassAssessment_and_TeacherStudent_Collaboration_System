@@ -12,6 +12,7 @@
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  
 }
 
 body {
@@ -25,6 +26,7 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  
 }
 
 #contact input[type="text"],

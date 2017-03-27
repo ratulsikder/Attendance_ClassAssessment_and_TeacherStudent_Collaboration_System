@@ -26,7 +26,7 @@ table
 }
 table tr,td
 {
- padding:15px;
+ padding:20px;
  //border:solid #e1e1e1 1px;
 }
 table tr td input
@@ -44,7 +44,7 @@ table tr td input
 }
 table tr td select
 {
- width:99%;
+ width:97%;
  height:45px;
  border:solid #797C80 1px;
  border-radius:3px;
@@ -71,7 +71,7 @@ table tr td textarea
 
 table tr td button
 {
- width:99%;
+ width:97%;
  height:45px;
  border:10px;
  background:rgba(12,45,78,11);

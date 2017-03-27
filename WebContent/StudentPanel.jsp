@@ -25,7 +25,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Teacher Panel</title>
+<title>Student Panel</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -51,7 +51,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Teacher </a>
+				<a class="navbar-brand" href="#">Student</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -72,8 +72,8 @@
 			<ul class="nav navbar-nav side-nav">
 				<li class="active"><a href="#"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li><a href="TakeAttendance.jsp"><i
-						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
+				<li><a href="Selectidforview.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
 				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
 						Tables</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
