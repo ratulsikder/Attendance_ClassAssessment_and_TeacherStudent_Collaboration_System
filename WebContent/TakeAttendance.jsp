@@ -120,7 +120,7 @@
 				<div class="row">
 					<div class="container" style="max-width: 30%">
 						<form id="contact" action="AttendanceFetcher.jsp" method="post">
-							<h3>Select the course</h3>
+							<h3>Select the options</h3>
 
 							<fieldset>
 								Department: <select name="department" required autofocus

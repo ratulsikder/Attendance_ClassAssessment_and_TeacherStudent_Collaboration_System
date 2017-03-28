@@ -80,16 +80,15 @@
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
-				<li class="active"><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
-						Insert Marks</a></li>
+				<li class="active"><a href="InsertMarks.jsp"><i
+						class="fa fa-fw fa-table"></i> Insert Marks</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 						Forms</a></li>
-				<li><a href="NewCourse.jsp"><i
-						class="fa fa-fw fa-desktop"></i> Start New Course</a></li>
+				<li><a href="NewCourse.jsp"><i class="fa fa-fw fa-desktop"></i>
+						Start New Course</a></li>
 				<li><a href="ViewCourseRequest.jsp"><i
 						class="fa fa-fw fa-wrench"></i> Review Course Request</a></li>
-				<li><a href=""><i class="fa fa-fw fa-file"></i>
-						Status</a></li>
+				<li><a href=""><i class="fa fa-fw fa-file"></i> Status</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
@@ -103,7 +102,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Take Attendance <small></small>
+							Insert Marks <small>of class assessments</small>
 						</h1>
 					</div>
 				</div>
@@ -112,14 +111,14 @@
 					ServletContext sc = getServletContext();
 					Connection con = (Connection) sc.getAttribute("MyConn");
 					PrintWriter pw = response.getWriter();
-					
+
 					Date date = new Date();
-				    String DATE_FORMAT = "yyyy-MM-dd";
-				    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+					String DATE_FORMAT = "yyyy-MM-dd";
+					SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
 				%>
 				<div class="row">
 					<div class="container" style="max-width: 30%">
-						<form id="contact" action="AttendanceFetcher.jsp" method="post">
+						<form id="contact" action="InsertMarksFetcher.jsp" method="post">
 							<h3>Select the course</h3>
 
 							<fieldset>
@@ -190,10 +189,15 @@
 									%>
 								</select>
 							</fieldset>
-							<fieldset>
-								Date:<input style="float: right" type="date" value=<%=(String)sdf.format(date) %> tabindex="3" name="date" required>
-							</fieldset>
 							
+							<fieldset>
+								Select Type: <select name="type" required style="float: right">
+									<option value="assessment_1_mark" style="color:OrangeRed  ">Assessment 1</option>
+									<option value="assessment_2_mark" style="color:OrangeRed ">Assessment 2</option>
+									<option value="assignment_1_mark" style="color:MediumBlue ">Assignment 1</option>
+									<option value="assignment_2_mark" style="color:MediumBlue ">Assignment 2</option>
+								</select>
+							</fieldset>
 
 							<fieldset>
 								<button name="submit" type="submit" id="contact-submit"
