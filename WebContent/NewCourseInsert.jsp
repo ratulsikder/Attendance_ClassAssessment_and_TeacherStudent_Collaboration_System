@@ -35,7 +35,6 @@
         
         ps.execute();
       
-        PreparedStatement ps2=con.prepareStatement("CREATE table \""+table_name+"\" (\"STUDENT_ID\" VARCHAR2(20), primary key (\"STUDENT_ID\"))");
         ps2.execute();
         
         pw.println("<font color=green size=5>Operation Successfull.</font>");

@@ -41,3 +41,16 @@ CREATE TABLE  "COURSE_REQUEST"
    )
 /
 
+//Auto created table example:
+CREATE TABLE  "CSE2017CSE110" 
+   ("STUDENT_ID" VARCHAR2(20), 
+	"assessment_1_mark" NUMBER, 
+	"assessment_2_mark" NUMBER, 
+	"assignment_1_mark" NUMBER, 
+	"assignment_2_mark" NUMBER, 
+	"assignment_1" BLOB, 
+	"assignment_2" BLOB, 
+	 PRIMARY KEY ("STUDENT_ID") ENABLE
+   )
+/
+
