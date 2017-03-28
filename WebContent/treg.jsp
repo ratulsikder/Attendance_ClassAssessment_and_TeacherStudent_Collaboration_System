@@ -25,16 +25,13 @@
 </tr>
 
 <tr>
-<td><h3>User name:</h3><input type="text" name="uname" placeholder="User name" required /></td>
-</tr>
-<tr>
 <td><h3>Password:</h3><input type="password" name="pass" placeholder="Password" required /></td>
 </tr>
 <tr>
 <td><button type="submit" name="btn-signup">Register</button></td>
 </tr>
 <tr>
-<td><a href="tlog.jsp"> Login here...</a></td>
+<td><a href="tlog.jsp"> Login here.</a></td>
 </tr>
 </table>
 </form>
