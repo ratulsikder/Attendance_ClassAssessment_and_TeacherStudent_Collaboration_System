@@ -3,9 +3,9 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
-	String id = (String) hs.getAttribute("student_id");
+	String email = (String) hs.getAttribute("semail");
+	String name = (String) hs.getAttribute("sname");
+	String id = (String) hs.getAttribute("sstudent_id");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -109,19 +109,19 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Compose message <small>Compose a Message for Acknowledgement </small>
+							Assignment Submission : <small>Submit Assignment for Selected Cource </small>
 						</h1>
 					</div>
 				</div>
 				<!-- /.row -->
 				<div class="row">
 					<div class="container">
-						<form id="contact" action="SubmitAssignment.jsp" method="post">
+						<form id="contact" action="SubmitAssignment" method="post">
 							<h3>Fill the Course Details and Submit Assignment</h3>
 
 							<fieldset>
 								<input placeholder="Department name in short form" type="text"
-									tabindex="1" name="department" required autofocus>
+									tabindex="1" name="department_name" required autofocus>
 							</fieldset>
 							<fieldset>
 								<input placeholder="Course Code" type="text" tabindex="2"

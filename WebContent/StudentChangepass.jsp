@@ -2,8 +2,8 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
+	String email = (String) hs.getAttribute("semail");
+	String name = (String) hs.getAttribute("sname");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();

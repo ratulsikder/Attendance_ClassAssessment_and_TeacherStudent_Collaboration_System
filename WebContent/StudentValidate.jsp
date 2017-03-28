@@ -39,9 +39,9 @@ try
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 
-				hs.setAttribute("email", email);
-				hs.setAttribute("name", rs.getString("name"));
-				hs.setAttribute("student_id", rs.getString("id"));
+				hs.setAttribute("semail", email);
+				hs.setAttribute("sname", rs.getString("name"));
+				hs.setAttribute("sstudent_id", rs.getString("id"));
 				response.setStatus(response.SC_MOVED_TEMPORARILY);
 				response.setHeader("Location", "StudentPanel.jsp");
 

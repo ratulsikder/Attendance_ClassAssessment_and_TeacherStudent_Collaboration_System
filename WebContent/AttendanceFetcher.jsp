@@ -188,7 +188,7 @@
 							
 							<h4><%=rs.getString("student_id")%>:<input style="float: right; width: 50% ;hight:50%" type="checkbox"
 								class="student_list" name="<%=rs.getString("student_id")%>"
-								value="1" tabindex="1" required autofocus></h4>
+								value="1" tabindex="1" autofocus></h4>
 								<hr>
 								
 

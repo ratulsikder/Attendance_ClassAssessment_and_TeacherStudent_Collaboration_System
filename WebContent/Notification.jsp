@@ -3,9 +3,9 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
-	String id = (String) hs.getAttribute("student_id");
+	String email = (String) hs.getAttribute("semail");
+	String name = (String) hs.getAttribute("sname");
+	String id = (String) hs.getAttribute("sstudent_id");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -116,7 +116,7 @@
 				<!-- /.row -->
 				<div class="row">
 					<div class="container">
-						<form id="contact" action="CourseRequestInsert.jsp" method="post">
+						<form id="contact" action="NotificationInsert.jsp" method="post">
 							<h3>Fill the Course Details and Submit Assignment</h3>
 
 							<fieldset>
