@@ -4,6 +4,7 @@
 	HttpSession hs = request.getSession();
 	String email = (String) hs.getAttribute("email");
 	String name = (String) hs.getAttribute("name");
+	String id = (String) hs.getAttribute("student_id");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -78,10 +79,10 @@
 						Own Information</a></li>
 				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
 						Change information</a></li>
-				<li><a href="bootstrap-elements.html"><i
-						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
-				<li><a href="bootstrap-grid.html"><i
-						class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a></li>
+				<li><a href="Notification.jsp"><i
+						class="fa fa-fw fa-desktop"></i>Compose Message</a></li>
+				<li><a href="AssignmentSubmission.jsp"><i
+						class="fa fa-fw fa-desktop"></i>Submit Assignment</a></li>
 				<li><a href="javascript:;" data-toggle="collapse"
 					data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>
 						Dropdown <i class="fa fa-fw fa-caret-down"></i></a>

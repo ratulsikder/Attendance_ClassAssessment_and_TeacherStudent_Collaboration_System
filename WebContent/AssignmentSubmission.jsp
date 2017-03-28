@@ -116,7 +116,7 @@
 				<!-- /.row -->
 				<div class="row">
 					<div class="container">
-						<form id="contact" action="CourseRequestInsert.jsp" method="post">
+						<form id="contact" action="SubmitAssignment.jsp" method="post">
 							<h3>Fill the Course Details and Submit Assignment</h3>
 
 							<fieldset>

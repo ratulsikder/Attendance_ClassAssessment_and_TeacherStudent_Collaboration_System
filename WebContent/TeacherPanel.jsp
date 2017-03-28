@@ -70,8 +70,8 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li class="active"><a href="#"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+				<li class="active"><a href="TeacherPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i> Teacher Panel</a></li>
 				<li><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
 				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
