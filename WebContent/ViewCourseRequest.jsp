@@ -125,43 +125,54 @@
 
 					try {
 
-						PreparedStatement ps = con.prepareStatement("SELECT * from  COURSE_REQUEST where teacher_id='" + email + "'");
+						PreparedStatement ps = con.prepareStatement(
+								"SELECT * from  COURSE_REQUEST where teacher_id='" + email + "'" + " ORDER BY COURSE_CODE");
 						ResultSet rs = ps.executeQuery();
 				%>
 
 				<div class="row">
 					<div class="col-lg-12">
 						<table width="100%" class="breadcrumb" border="1">
+							<tr>
+								<th>Course Code</th>
+								<th>Course Year</th>
+								<th>Student Name</th>
+								<th>Student ID</th>
+								<th>Department</th>
+								<th width="8%">ALLOW</th>
+								<th width="8%">REJECT</th>
+							</tr>
 							<%
-								while (rs.next()) {%>
-									<tr id="<%=rs.getString("student_id")%>">
-									<th>CSE 110</th>
-									<th>Ratul Sikder</th>
-									<th>CSE</th>
-									<th>2017</th>
-									<th width="8%"><button style="width: 100%"
-											onclick="allow(this,1)">Allow</button></th>
-									<th width="8%"><button style="width: 100%"
-											onclick="reject()">Reject</button></th>
-								</tr>
-									<%}
+								int i = 0;
+									while (rs.next()) {
+							%>
+							<tr id="<%=i%>">
+								<td><%=rs.getString("course_code")%></td>
+								<td><%=rs.getString("year")%></td>
+								<td><%=rs.getString("student_name")%></td>
+								<td><%=rs.getString("student_id")%></td>
+								<td><%=rs.getString("department")%></td>
+
+								<td><button style="width: 100%"
+										onclick="allow(this,<%=i%>)"
+										data-department="<%=rs.getString("department")%>"
+										data-year="<%=rs.getString("year")%>"
+										data-id="<%=rs.getString("student_id")%>"
+										data-course-code="<%=rs.getString("course_code")%>">Allow</button></td>
+								<td><button style="width: 100%"
+										onclick="reject(this,<%=i%>)"
+										data-department="<%=rs.getString("department")%>"
+										data-year="<%=rs.getString("year")%>"
+										data-id="<%=rs.getString("student_id")%>"
+										data-course-code="<%=rs.getString("course_code")%>">Reject</button></td>
+							</tr>
+							<%
+							i++;
+								}
 								} catch (SQLException ex) {
 									System.out.println(ex);
 								}
 							%>
-
-
-							<tr id="2">
-								<th>CSE 110</th>
-								<th>Ratul</th>
-								<th>CSP</th>
-								<th>2018</th>
-								<th width="8%"><button style="width: 100%"
-										onclick="allow()">Allow</button></th>
-								<th width="8%"><button style="width: 100%"
-										onclick="reject()">Reject</button></th>
-							</tr>
-
 						</table>
 
 					</div>

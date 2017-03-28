@@ -17,31 +17,26 @@ ServletContext sc = getServletContext();
 Connection con = (Connection) sc.getAttribute("MyConn");
 PrintWriter pw = response.getWriter();
 
+String student_id = request.getParameter("student_id");
 String department = request.getParameter("department");
 String course_code = request.getParameter("course_code");
 String course_year = request.getParameter("course_year");
 String table_name = department+course_year+course_code;
 
-HttpSession hs = request.getSession();
-String email = (String)hs.getAttribute("email");
-String student_id = (String)hs.getAttribute("student_id");
-String teacher_id=null;
+//System.out.println("INSERT INTO "+table_name+" ( student_id ) VALUES ('"+student_id+"')");
+
 
 try {
 
-	PreparedStatement ps=con.prepareStatement("SELECT teacher_id from  COURSE where table_name='"+table_name+"'");
-
-    ResultSet rs=ps.executeQuery();
+	PreparedStatement ps=con.prepareStatement("INSERT INTO "+table_name+" ( student_id ) VALUES ('"+student_id+"')");
+    ps.execute();
+    
+    PreparedStatement ps2=con.prepareStatement("DELETE FROM course_request WHERE table_name_student_id='"+table_name+student_id+"'");
+    ps2.execute();
   
-    while(rs.next())
-    {
-    	teacher_id = rs.getString("teacher_id");	
-    }
-
-} catch (SQLException ex) {
+} catch (Exception ex) {
 	System.out.println(ex);
 }
-
 %>
 
 </body>
