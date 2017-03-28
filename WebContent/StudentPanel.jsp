@@ -160,14 +160,14 @@
 										<i class="fa fa-tasks fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">Update</div>
-										<div>Change Information</div>
+										<div class="huge">Course</div>
+										<div>New Course Request</div>
 									</div>
 								</div>
 							</div>
-							<a href="StudentChangepass.jsp">
+							<a href="CourseRequest.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">Modify Information</span> <span
+									<span class="pull-left">Make a request to the teacher</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>

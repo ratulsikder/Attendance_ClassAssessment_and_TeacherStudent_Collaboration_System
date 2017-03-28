@@ -120,7 +120,7 @@
 
 							<fieldset>
 								<input placeholder="Department name in short form" type="text"
-									tabindex="1" name="department_name" required autofocus>
+									tabindex="1" name="department" required autofocus>
 							</fieldset>
 							<fieldset>
 								<input placeholder="Course Code" type="text" tabindex="2"
