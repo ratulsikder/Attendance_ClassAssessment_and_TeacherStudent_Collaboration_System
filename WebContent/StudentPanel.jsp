@@ -79,21 +79,11 @@
 						Own Information</a></li>
 				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
 						Change information</a></li>
-				<li><a href="Notification.jsp"><i
-						class="fa fa-fw fa-desktop"></i>Compose Message</a></li>
+				
 				<li><a href="AssignmentSubmission.jsp"><i
 						class="fa fa-fw fa-desktop"></i>Submit Assignment</a></li>
-				<li><a href="javascript:;" data-toggle="collapse"
-					data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>
-						Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-					<ul id="demo" class="collapse">
-						<li><a href="#">Dropdown Item</a></li>
-						<li><a href="#">Dropdown Item</a></li>
-					</ul></li>
-				<li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i>
-						Blank Page</a></li>
-				<li><a href="index-rtl.html"><i
-						class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li>
+				
+				
 			</ul>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
@@ -106,10 +96,10 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Dashboard <small>Statistics Overview</small>
+							Student Panel <small> Overview</small>
 						</h1>
 						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-dashboard"></i> Dashboard
+							<li class="active"><i class="fa fa-dashboard"></i> 
 							</li>
 						</ol>
 					</div>
@@ -121,10 +111,10 @@
 						<div class="alert alert-info alert-dismissable">
 							<button type="button" class="close" data-dismiss="alert"
 								aria-hidden="true">&times;</button>
-							<i class="fa fa-info-circle"></i> <strong>Like SB Admin?</strong>
-							Try out <a
-								href="http://startbootstrap.com/template-overviews/sb-admin-2"
-								class="alert-link">SB Admin 2</a> for additional features!
+							<i class="fa fa-info-circle"></i> <strong>Thank You</strong>
+							 <a
+								href="#"
+								class="alert-link"><%=name %></a> Quick options and View.
 						</div>
 					</div>
 				</div>
@@ -183,14 +173,14 @@
 										<i class="fa fa-shopping-cart fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">124</div>
-										<div>New Orders!</div>
+										<div class="huge">Information</div>
+										<div> Search throw Student Id</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="Selectidforview.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">Search Information</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
@@ -205,12 +195,12 @@
 										<i class="fa fa-support fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
+										<div class="huge">Own</div>
+										<div>View own all details </div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="ViewOwnDetails.jsp">
 								<div class="panel-footer">
 									<span class="pull-left">View Details</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -218,26 +208,13 @@
 								</div>
 							</a>
 						</div>
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-support fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br><br><br><br><br><br><br>
+					
 					</div>
 				</div>
 				<!-- /.row -->

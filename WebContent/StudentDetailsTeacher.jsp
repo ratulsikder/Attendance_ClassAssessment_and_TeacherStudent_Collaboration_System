@@ -2,8 +2,8 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("semail");
-	String name = (String) hs.getAttribute("sname");
+	String email = (String) hs.getAttribute("temail");
+	String name = (String) hs.getAttribute("tname");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -14,8 +14,6 @@
 	}
 	;
 %>
-
-
 <%-- End Project Login Authenticator --%>
 
 <%@page import="java.sql.ResultSet"%>
@@ -23,12 +21,22 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Panel</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Student Details.</title>
 <link rel="stylesheet" href="TeacherPanelStyle.css" type="text/css" />
+
+<!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -40,8 +48,23 @@
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+   
+    
+    
+
 </head>
+
 <body>
+
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -54,7 +77,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Student </a>
+				<a class="navbar-brand" href="#"> Student</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -70,16 +93,16 @@
 								Out</a></li>
 					</ul></li>
 			</ul>
-		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav side-nav">
+			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav side-nav">
 				<li><a href="StudentPanel.jsp"><i
 						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
-				<li><a href="Selectidforview.jsp"><i
+				<li class="active"><a href="Selectidforview.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
 				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
 						Own Information</a></li>
-				<li class="active"><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
+				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
 						Change information</a></li>
 				
 				<li><a href="AssignmentSubmission.jsp"><i
@@ -87,49 +110,31 @@
 				
 				
 			</ul>
-		</div>
-		<!-- /.navbar-collapse --> </nav>
+			</div>
+			<!-- /.navbar-collapse -->
+		</nav>
 
 		<div id="page-wrapper">
 
 			<div class="container-fluid">
 
-				<!-- /.row -->
-
+				<!-- Page Heading -->
 				<div class="row">
 					<div class="container">
-						 <h3>Change <%= name %>'s Information</h3>
-                       <br>
-<br>
-  							<form id="contact" action="ChangeinfoS.jsp" method="post">
-							<h4 style="color:blue">Fill the Form</h4>
+					<br>
+						<br>
+						<br>
+						<br>
+						<br><br>
+						
+						<br>
+						<br>
+						<form id="contact" action="ViewStudentinfoByteacher.jsp" method="post">
+							<h3>Fill the ID Number</h3>
 
-							
 							<fieldset>
-							Student Name:
-								<input placeholder="Student Name" type="text"
-									tabindex="1" name="name" required autofocus>
-							</fieldset>
-							
-							<fieldset>
-							Student Contact Number:
-								<input placeholder="Student Contact Number" type="text"
-									tabindex="2" name="conno" required autofocus>
-							</fieldset>
-							<fieldset>
-							Guardian Name:
-								<input placeholder="Guardian Name" type="text"
-									tabindex="3" name="gname" required autofocus>
-							</fieldset>
-							<fieldset>
-							Guardian Contact Number:
-								<input placeholder="Guardian Contact Number" type="text"
-									tabindex="4" name="gconno" required autofocus>
-							</fieldset>
-							<fieldset>
-							Student PassWord:
-								<input placeholder="Student Password" type="password"
-									tabindex="5" name="pass" required autofocus>
+								<input placeholder="Student ID" type="text"
+									tabindex="1" name="id" required autofocus>
 							</fieldset>
 							
 							<fieldset>
@@ -137,22 +142,37 @@
 							</fieldset>
 
 						</form>
-  
-<br>
-<br>
-<br>
-<br>
-  
-   
-                            </table>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+					</div>
+						
+					
+							</form>
+						</ol>
+					</div>
+				</div>
 				<!-- /.row -->
 
-
+				<!-- Flot Charts -->
+				
 				<!-- /.row -->
 
-
+			
 				<!-- /.row -->
 
+				
+				<!-- /.row -->
+
+				
+				<!-- /.row -->
+
+				
 			</div>
 			<!-- /.container-fluid -->
 
@@ -173,8 +193,14 @@
 	<script src="js/plugins/morris/morris.min.js"></script>
 	<script src="js/plugins/morris/morris-data.js"></script>
 
-
-
-
+	<!-- Flot Charts JavaScript -->
+	<!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+	<script src="js/plugins/flot/jquery.flot.js"></script>
+	<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+	<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+	<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+	<script src="js/plugins/flot/flot-data.js"></script>
 
 </body>
+
+</html>

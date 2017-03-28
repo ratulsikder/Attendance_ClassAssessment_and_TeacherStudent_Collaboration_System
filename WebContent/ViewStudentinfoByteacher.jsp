@@ -2,8 +2,8 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("semail");
-	String name = (String) hs.getAttribute("sname");
+	String email = (String) hs.getAttribute("temail");
+	String name = (String) hs.getAttribute("tname");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -164,6 +164,17 @@ try
                                         <td><h5>Contact Number</h5></td>
                                        
                                         <td><h5><%=rs.getString(6) %></h5></td>
+                                    </tr>
+                                       <tr class="danger">
+                                        <td><h5>Guardian Name</h5></td>
+                                        
+                                        <td><h5><%=rs.getString(7) %></h5></td>
+                                    </tr>
+                                    
+                                     <tr class="active">
+                                        <td><h5>Guardian Contact Number</h5></td>
+                                        
+                                        <td><h5><%=rs.getString(8) %></h5></td>
                                     </tr>
                                     
                                     

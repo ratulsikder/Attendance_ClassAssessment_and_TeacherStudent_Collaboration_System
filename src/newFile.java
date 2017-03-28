@@ -61,41 +61,14 @@ public class newFile extends HttpServlet {
                 // stat.setBinaryStream(4, (InputStream) itemPhoto.getInputStream(), (int) itemPhoto.getSize());
                 int rows = stat.executeUpdate();
                 out.println("insert");
-              /*  if (rows > 0) {
-                    response.sendRedirect("index.jsp");
-                } else {
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title>Error Adding Employee</title>");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<h2>Error Adding Employee Data</h2>");
-                    out.println("</body>");
-                    out.println("</html>");
-                }*/
+             
             }
         } catch (Exception ex) {
             out.println(ex.getMessage());
-        } /*finally {
-            try {
-                con.close();
-                stat.close();
-                out.close();
-            } catch (Exception ex) {
-                out.println(ex.getMessage());
-            }
-        }*/
+        } 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
