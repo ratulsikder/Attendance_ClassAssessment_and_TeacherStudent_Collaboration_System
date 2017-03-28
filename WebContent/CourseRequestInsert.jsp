@@ -1,3 +1,4 @@
+<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.io.PrintWriter"%>
@@ -29,21 +30,25 @@
 	
 	try {
 
-		PreparedStatement ps=con.prepareStatement("SELECT teacher_id from  COURSE where table_name=?");
-		
-        ps.setString(1,table_name); 
+		PreparedStatement ps=con.prepareStatement("SELECT teacher_id from  COURSE where table_name='"+table_name+"'");
+
         ResultSet rs=ps.executeQuery();
-        
+      
         while(rs.next())
         {
         	teacher_id = rs.getString("teacher_id");	
         }
 
-	} catch (Exception ex) {
+	} catch (SQLException ex) {
 		System.out.println(ex);
+	}
+	
+	if(teacher_id==null)
+	{
 		pw.println("<font color=red size=5>No course found.</font>");
 		response.setHeader("Refresh", "3;url=StudentPanel.jsp");
-	}
+		throw new javax.servlet.jsp.SkipPageException();	
+	} else {
 	
 	try {
 
@@ -55,17 +60,19 @@
         ps.setString(4,department);
         ps.setString(5,course_year);
         ps.setString(6,teacher_id);
-        System.out.println(student_id);
+
         
         ps.execute();
       
         pw.println("<font color=green size=4>Operation Successfull. Please wait for the teacher response.</font>");
         response.setHeader("Refresh", "5;url=StudentPanel.jsp");
+        throw new javax.servlet.jsp.SkipPageException();
 
-	} catch (Exception ex) {
+	} catch (SQLException ex) {
 		System.out.println(ex);
-		pw.println("<font color=red size=5>Operation failed..</font>");
+		pw.println("<font color=red size=5>Already Requested.</font>");
 		response.setHeader("Refresh", "3;url=StudentPanel.jsp");
+	}
 	}
 %>
 

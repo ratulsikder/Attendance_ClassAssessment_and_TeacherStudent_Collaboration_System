@@ -139,13 +139,13 @@
 									</div>
 									<div class="col-xs-9 text-right">
 										<div class="huge">26</div>
-										<div>New Comments!</div>
+										<div>New Course Request</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="ViewCourseRequest.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">View details</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
