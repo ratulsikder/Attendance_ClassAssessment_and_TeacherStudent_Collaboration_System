@@ -116,26 +116,29 @@
 				<!-- /.row -->
 				<div class="row">
 					<div class="container">
-						<form id="contact" action="file" method="post">
+						<form id="contact" action="FileUplode" method="post">
 							<h3>Fill the Course Details and Submit Assignment</h3>
-
 							<fieldset>
-								<input placeholder="Department name in short form" type="text"
-									tabindex="1" name="department_name" required autofocus>
+								<input placeholder="Student Id" type="text"
+									tabindex="1" name="student_id" required autofocus>
 							</fieldset>
 							<fieldset>
-								<input placeholder="Course Code" type="text" tabindex="2"
+								<input placeholder="Department name in short form" type="text"
+									tabindex="2" name="department_name" required autofocus>
+							</fieldset>
+							<fieldset>
+								<input placeholder="Course Code" type="text" tabindex="3"
 									name="course_code" required>
 							</fieldset>
 							
 							<fieldset>
 								Course Taking Year:<input style="float: right" type="number"
 									value=<%=(int) Calendar.getInstance().get(Calendar.YEAR)%>
-									tabindex="3" name="course_year" required>
+									tabindex="4" name="course_year" required>
 							</fieldset>
 							<fieldset>
 								Assignment's PDF:<input style="float: right" type="file"
-									tabindex="4" name="course_Assignment" required>
+									tabindex="5" name="flPhoto" required>
 							</fieldset>
 
 

@@ -25,7 +25,7 @@ public class ConnectionDemo implements ServletContextListener{
             Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","PROJECT","123");
 			 ServletContext sc = sce.getServletContext();
 			 sc.setAttribute("MyConn", conn);
-			 JOptionPane.showConfirmDialog(null, sc);
+			// JOptionPane.showConfirmDialog(null, sc);
 			
 		} catch (ClassNotFoundException ex) {
 		}catch(SQLException e){
