@@ -1,4 +1,4 @@
-<%-- Begin Project Login Authenticator --%>
+
 <%@page import="java.util.Calendar"%>
 <%@page import="java.io.PrintWriter"%>
 <%
@@ -109,7 +109,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Assignment Submission : <small>Submit Assignment for Selected Cource </small>
+							Assignment Submission: <small>Submit Assignment's PDF file </small>
 						</h1>
 					</div>
 				</div>
@@ -141,7 +141,7 @@
 
 							<fieldset>
 								<button name="submit" type="submit" id="contact-submit"
-									data-submit="...Sending">Submit Assignment</button>
+									>Submit Assignment</button>
 							</fieldset>
 
 						</form>

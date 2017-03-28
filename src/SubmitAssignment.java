@@ -29,7 +29,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
         maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class SubmitAssignment extends HttpServlet {
 	
-    String department_name,course_code,course_name,course_year;
+    String department_name,course_code,course_year;
     
     FileItem flItem = null;
 	//table code
@@ -42,13 +42,13 @@ public class SubmitAssignment extends HttpServlet {
         
     	 department_name = request.getParameter("department_name");
     	 course_code = request.getParameter("course_code");
-    	 course_name = request.getParameter("course_name");
+    	 //course_name = request.getParameter("course_name");
     	 course_year = request.getParameter("course_year");
     	 String table_name = department_name+course_year+course_code; 
-        
+       // pw.println(table_name);
     	HttpSession hs = request.getSession();
-    	String email = (String) hs.getAttribute("email");
-    	String name = (String) hs.getAttribute("name");
+    	String email = (String) hs.getAttribute("semail");
+    	String name = (String) hs.getAttribute("sname");
     	String student_id = (String) hs.getAttribute("student_id");
 
     		if (email == null) {
@@ -60,36 +60,46 @@ public class SubmitAssignment extends HttpServlet {
     			//throw new javax.servlet.jsp.SkipPageException();
 
     		}
-    		;
+			pw.println(table_name);
+    		
         
        // sir code 
         
+		
           PrintWriter out = response.getWriter();
-       
+       out.println("juthi");
         PreparedStatement stat = null;
         try {
             long maxFileSize = (2 * 1024 * 1024);
             int maxMemSize = (2 * 1024 * 1024);
+			
 //            final String path = "/tmp";
             boolean isMultiPart = ServletFileUpload.isMultipartContent(request);
             if (isMultiPart) {
+				
                 FileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 List items = upload.parseRequest(request);
                 Iterator<FileItem> iter = items.iterator();
                 while (iter.hasNext()) {
+					
                     FileItem fileItem = iter.next();
                     if (fileItem.isFormField()) {
                         processFormField(fileItem);
+						out.println("juthi2");
+						
+                        //pw.println(fileItem);
                     } else {
                         flItem = fileItem;
                        // pw.println(flItem);
                     }
                 }
+                
+                pw.println("kundu");
                //  pw.println("insert into" +table_name+"(STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID="+id);
                // PreparedStatement ps = con.prepareStatement("UPDATE " + table_name + " SET \"" + date + "\" = 1 WHERE student_id = " + paramName);
                 stat = con.prepareStatement("insert into " +table_name+ " (STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID= "+student_id);
-               // pw.println("insert into" +table_name+"(STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID="+id);
+              //  out.println("insert into" +table_name+"(STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID="+student_id);
                 stat.setString(1,student_id);
                // stat.setString(2, add);
                // stat.setDouble(3, salary);
@@ -154,10 +164,6 @@ public class SubmitAssignment extends HttpServlet {
         	department_name = item.getString();
         } else if (item.getFieldName().equals("course_code")) {
         	course_code = item.getString();
-        }
-        
-        else if (item.getFieldName().equals("course_name")) {
-        	course_name = item.getString();
         }
         else if (item.getFieldName().equals("course_year")) {
         	course_year = item.getString();
