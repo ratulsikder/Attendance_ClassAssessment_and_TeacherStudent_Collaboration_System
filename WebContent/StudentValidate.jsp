@@ -41,7 +41,7 @@ try
 
 				hs.setAttribute("semail", email);
 				hs.setAttribute("sname", rs.getString("name"));
-				hs.setAttribute("sstudent_id", rs.getString("id"));
+				hs.setAttribute("student_id", rs.getString("id"));
 				response.setStatus(response.SC_MOVED_TEMPORARILY);
 				response.setHeader("Location", "StudentPanel.jsp");
 

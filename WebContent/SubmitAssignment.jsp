@@ -25,7 +25,7 @@
 	
 	HttpSession hs = request.getSession();
 	String email = (String)hs.getAttribute("semail");
-	String student_id = (String)hs.getAttribute("sstudent_id");
+	String student_id = (String)hs.getAttribute("student_id");
 	String teacher_id=null;
 	
 	try {
