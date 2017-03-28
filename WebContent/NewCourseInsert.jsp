@@ -19,7 +19,7 @@
 	String table_name = department_name+course_year+course_code;
 	
 	HttpSession hs = request.getSession();
-	String email = (String)hs.getAttribute("email");
+	String email = (String)hs.getAttribute("temail");
 	
 	try {
 

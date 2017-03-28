@@ -8,9 +8,8 @@
 	
 	<%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
-	String id = (String) hs.getAttribute("student_id");
+	String email = (String) hs.getAttribute("temail");
+	String name = (String) hs.getAttribute("tname");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();

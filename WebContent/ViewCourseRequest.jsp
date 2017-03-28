@@ -1,4 +1,5 @@
 <%-- Begin Project Login Authenticator --%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
@@ -6,8 +7,8 @@
 <%@page import="java.io.PrintWriter"%>
 <%
 	HttpSession hs = request.getSession();
-	String email = (String) hs.getAttribute("email");
-	String name = (String) hs.getAttribute("name");
+	String email = (String) hs.getAttribute("temail");
+	String name = (String) hs.getAttribute("tname");
 
 	if (email == null) {
 		PrintWriter pw = response.getWriter();
@@ -76,9 +77,9 @@
 		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
-				<li><a href="TeacherPanel.jsp"><i
+				<li class="active"><a href="TeacherPanel.jsp"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li class="active"><a href="TakeAttendance.jsp"><i
+				<li><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
 				<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
 						Tables</a></li>
@@ -121,106 +122,51 @@
 					ServletContext sc = getServletContext();
 					Connection con = (Connection) sc.getAttribute("MyConn");
 					PrintWriter pw = response.getWriter();
-					
-					Date date = new Date();
-				    String DATE_FORMAT = "yyyy-MM-dd";
-				    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+
+					try {
+
+						PreparedStatement ps = con.prepareStatement("SELECT * from  COURSE_REQUEST where teacher_id='" + email + "'");
+						ResultSet rs = ps.executeQuery();
 				%>
+
 				<div class="row">
-					<div class="container" style="max-width: 30%">
-						<form id="contact" action="AttendanceFetcher.jsp" method="post">
-							<h3>Select the course</h3>
+					<div class="col-lg-12">
+						<table width="100%" class="breadcrumb" border="1">
+							<%
+								while (rs.next()) {%>
+									<tr id="<%=rs.getString("student_id")%>">
+									<th>CSE 110</th>
+									<th>Ratul Sikder</th>
+									<th>CSE</th>
+									<th>2017</th>
+									<th width="8%"><button style="width: 100%"
+											onclick="allow(this,1)">Allow</button></th>
+									<th width="8%"><button style="width: 100%"
+											onclick="reject()">Reject</button></th>
+								</tr>
+									<%}
+								} catch (SQLException ex) {
+									System.out.println(ex);
+								}
+							%>
 
-							<fieldset>
-								Department: <select name="department" required autofocus
-									style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (department) department from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
 
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("department")%>"><%=rs.getString("department")%></option>
+							<tr id="2">
+								<th>CSE 110</th>
+								<th>Ratul</th>
+								<th>CSP</th>
+								<th>2018</th>
+								<th width="8%"><button style="width: 100%"
+										onclick="allow()">Allow</button></th>
+								<th width="8%"><button style="width: 100%"
+										onclick="reject()">Reject</button></th>
+							</tr>
 
-									<%
-										}
+						</table>
 
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-								</select>
-							</fieldset>
-							<fieldset>
-								Year: <select name="year" required style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (course_year) course_year from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
-
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("course_year")%>"><%=rs.getString("course_year")%></option>
-
-									<%
-										}
-
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-
-								</select>
-							</fieldset>
-							<fieldset>
-								Course: <select name="course" required style="float: right">
-									<%
-										try {
-											//System.out.println("SELECT DISTINCT ON (department) department from course WHERE teacher_id = '"+email+"'");
-											PreparedStatement ps = con.prepareStatement(
-													"SELECT DISTINCT (course_code) course_code from course WHERE teacher_id = '" + email + "'");
-											ResultSet rs = ps.executeQuery();
-
-											while (rs.next()) {
-									%>
-									<option value="<%=rs.getString("course_code")%>"><%=rs.getString("course_code")%></option>
-
-									<%
-										}
-
-										} catch (Exception ex) {
-											System.out.println(ex);
-										}
-									%>
-								</select>
-							</fieldset>
-							<fieldset>
-								Date:<input style="float: right" type="date" value=<%=(String)sdf.format(date) %> tabindex="3" name="date" required>
-							</fieldset>
-							
-
-							<fieldset>
-								<button name="submit" type="submit" id="contact-submit"
-									data-submit="...Sending">Submit</button>
-							</fieldset>
-
-						</form>
 					</div>
 				</div>
 
-
-				<!-- /.row -->
-
-
-				<!-- /.row -->
-
-
-				<!-- /.row -->
 
 			</div>
 			<!-- /.container-fluid -->
@@ -233,6 +179,8 @@
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
+
+	<script src="js/ViewCourseRequest.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>

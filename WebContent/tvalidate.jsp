@@ -31,8 +31,8 @@
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 
-				hs.setAttribute("email", email);
-				hs.setAttribute("name", rs.getString("name"));
+				hs.setAttribute("temail", email);
+				hs.setAttribute("tname", rs.getString("name"));
 				response.setStatus(response.SC_MOVED_TEMPORARILY);
 				response.setHeader("Location", "TeacherPanel.jsp");
 

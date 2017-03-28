@@ -24,8 +24,9 @@
 	String table_name = department+course_year+course_code;
 	
 	HttpSession hs = request.getSession();
-	String email = (String)hs.getAttribute("email");
+	String email = (String)hs.getAttribute("semail");
 	String student_id = (String)hs.getAttribute("student_id");
+	String student_name = (String)hs.getAttribute("sname");
 	String teacher_id=null;
 	
 	try {
@@ -52,7 +53,7 @@
 	
 	try {
 
-		PreparedStatement ps=con.prepareStatement("insert into  COURSE_REQUEST values(?,?,?,?,?,?)");
+		PreparedStatement ps=con.prepareStatement("insert into  COURSE_REQUEST values(?,?,?,?,?,?,?)");
 		
         ps.setString(1,table_name+student_id); 
         ps.setString(2,student_id);
@@ -60,6 +61,7 @@
         ps.setString(4,department);
         ps.setString(5,course_year);
         ps.setString(6,teacher_id);
+        ps.setString(7,student_name);
 
         
         ps.execute();
