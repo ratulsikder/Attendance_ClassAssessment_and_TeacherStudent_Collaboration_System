@@ -78,9 +78,9 @@
 			<ul class="nav navbar-nav side-nav">
 				<li><a href="TeacherPanel.jsp"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li class="active"><a href="TakeAttendance.jsp"><i
+				<li><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
-				<li><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
+				<li class="active"><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
 						Insert Marks</a></li>
 				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
 						Forms</a></li>
