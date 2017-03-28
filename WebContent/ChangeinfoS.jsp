@@ -57,7 +57,7 @@ try {
 	
 	ps.execute();
 	pw.println("<h1><font color=red>Data Updateded Successfullty</font></h1>");
-	response.setHeader("Refresh", "3;url=StudentPanel.jsp");
+	response.setHeader("Refresh", "2;url=index.jsp");
     }
 } catch (Exception ex) {
 	pw.println(ex);

@@ -80,7 +80,7 @@
 				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
 						Own Information</a></li>
 				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
-						change info..</a></li>
+						Change Information</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i

@@ -77,7 +77,7 @@
 				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
 						Own Information</a></li>
 				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
-						change info..</a></li>
+						Change information</a></li>
 				<li><a href="bootstrap-elements.html"><i
 						class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
 				<li><a href="bootstrap-grid.html"><i
@@ -138,7 +138,7 @@
 										<i class="fa fa-comments fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">2Update</div>
+										<div class="huge">Update</div>
 										<div>Change Information</div>
 									</div>
 								</div>
