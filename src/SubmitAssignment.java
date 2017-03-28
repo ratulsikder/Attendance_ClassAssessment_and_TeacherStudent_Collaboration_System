@@ -36,15 +36,14 @@ public class SubmitAssignment extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ServletContext sc = getServletContext();
-    	Connection con = (Connection) sc.getAttribute("MyConn");
+      
     	PrintWriter pw = response.getWriter(); 
         
-    	 department_name = request.getParameter("department_name");
-    	 course_code = request.getParameter("course_code");
+    	// department_name = request.getParameter("department_name");
+    	// course_code = request.getParameter("course_code");
     	 //course_name = request.getParameter("course_name");
-    	 course_year = request.getParameter("course_year");
-    	 String table_name = department_name+course_year+course_code; 
+    	// course_year = request.getParameter("course_year");
+    	// String table_name = department_name+course_year+course_code; 
        // pw.println(table_name);
     	HttpSession hs = request.getSession();
     	String email = (String) hs.getAttribute("semail");
@@ -60,16 +59,18 @@ public class SubmitAssignment extends HttpServlet {
     			//throw new javax.servlet.jsp.SkipPageException();
 
     		}
-			pw.println(table_name);
+			//pw.println(table_name);
     		
         
        // sir code 
         
 		
           PrintWriter out = response.getWriter();
-       out.println("juthi");
+       //out.println("juthi");
         PreparedStatement stat = null;
+		Connection con=null;
         try {
+        	
             long maxFileSize = (2 * 1024 * 1024);
             int maxMemSize = (2 * 1024 * 1024);
 			
@@ -86,23 +87,33 @@ public class SubmitAssignment extends HttpServlet {
                     FileItem fileItem = iter.next();
                     if (fileItem.isFormField()) {
                         processFormField(fileItem);
-						out.println("juthi2");
+						//out.println("juthi2");
 						
-                        //pw.println(fileItem);
+                       
                     } else {
                         flItem = fileItem;
-                       // pw.println(flItem);
+                     
                     }
                 }
-                
-                pw.println("kundu");
-               //  pw.println("insert into" +table_name+"(STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID="+id);
-               // PreparedStatement ps = con.prepareStatement("UPDATE " + table_name + " SET \"" + date + "\" = 1 WHERE student_id = " + paramName);
+				
+				
+				
+				
+		 department_name = request.getParameter("department_name");
+    	 course_code = request.getParameter("course_code");
+		course_year = request.getParameter("course_year");
+    	 String table_name = department_name+course_year+course_code; 
+     
+				
+                  ServletContext sc = getServletContext();
+          	 con = (Connection) sc.getAttribute("MyConn");
+			 
+               // pw.println("kundu");
+             
                 stat = con.prepareStatement("insert into " +table_name+ " (STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID= "+student_id);
-              //  out.println("insert into" +table_name+"(STUDENT_ID,assignment_1)values(?,?) where STUDENT_ID="+student_id);
+           
                 stat.setString(1,student_id);
-               // stat.setString(2, add);
-               // stat.setDouble(3, salary);
+              
               pw.println("juthi");
                 stat.setBinaryStream(2, flItem.getInputStream(), (int) flItem.getSize());
                 // stat.setBinaryStream(4, (InputStream) itemPhoto.getInputStream(), (int) itemPhoto.getSize());
