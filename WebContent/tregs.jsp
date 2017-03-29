@@ -27,7 +27,7 @@
 			Connection con=(Connection)sc.getAttribute("MyConn");
 			PrintWriter pw=response.getWriter();
 		
-            PreparedStatement ps=con.prepareStatement("insert into  TEACHER values(?,?,?,?)");
+            PreparedStatement ps=con.prepareStatement("insert into  TEACHER values(?,?,?)");
             ps.setString(1,name);
             ps.setString(2,email);
             ps.setString(3,pwd);
