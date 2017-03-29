@@ -77,7 +77,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"> Student</a>
+				<a class="navbar-brand" href="#">Teacher</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -95,19 +95,19 @@
 			</ul>
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<ul class="nav navbar-nav side-nav">
-				<li><a href="StudentPanel.jsp"><i
-						class="fa fa-fw fa-dashboard"></i>Student Panel</a></li>
-				<li class="active"><a href="Selectidforview.jsp"><i
-						class="fa fa-fw fa-bar-chart-o"></i>View Student Details</a></li>
-				<li><a href="ViewOwnDetails.jsp"><i class="fa fa-fw fa-table"></i>
-						Own Information</a></li>
-				<li><a href="StudentChangepass.jsp"><i class="fa fa-fw fa-edit"></i>
-						Change information</a></li>
-				
-				<li><a href="AssignmentSubmission.jsp"><i
-						class="fa fa-fw fa-desktop"></i>Submit Assignment</a></li>
-				
+			<ul class="nav navbar-nav side-nav">
+				<li ><a href="TeacherPanel.jsp"><i
+						class="fa fa-fw fa-dashboard"></i> Teacher Panel</a></li>
+				<li><a href="TakeAttendance.jsp"><i
+						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
+				<li><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
+						Insert Marks</a></li>
+				<li><a href="NewCourse.jsp"><i
+						class="fa fa-fw fa-desktop"></i> Start New Course</a></li>
+				<li><a href="ViewCourseRequest.jsp"><i
+						class="fa fa-fw fa-wrench"></i> Review Course Request</a></li>
+						<li class="active"><a href="StudentDetailsTeacher.jsp"><i
+						class="fa fa-fw fa-wrench"></i> View Student Details</a></li>
 				
 			</ul>
 			</div>

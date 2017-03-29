@@ -76,16 +76,13 @@
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
 				<li><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
 						Insert Marks</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
 				<li><a href="NewCourse.jsp"><i
 						class="fa fa-fw fa-desktop"></i> Start New Course</a></li>
 				<li><a href="ViewCourseRequest.jsp"><i
 						class="fa fa-fw fa-wrench"></i> Review Course Request</a></li>
 						<li><a href="StudentDetailsTeacher.jsp"><i
 						class="fa fa-fw fa-wrench"></i> View Student Details</a></li>
-				<li><a href=""><i class="fa fa-fw fa-file"></i>
-						Status</a></li>
+				
 			</ul>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
@@ -98,10 +95,10 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Dashboard <small>Statistics Overview</small>
+							Teacher Panel <small> Overview</small>
 						</h1>
 						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-dashboard"></i> Dashboard
+							<li class="active"><i class="fa fa-dashboard"></i> 
 							</li>
 						</ol>
 					</div>
@@ -195,14 +192,14 @@
 										<i class="fa fa-shopping-cart fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">124</div>
-										<div>New Orders!</div>
+										<div class="huge">Review</div>
+										<div>Cource Request</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="ViewCourseRequest.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">View the Requests</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
@@ -217,39 +214,42 @@
 										<i class="fa fa-support fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
+										<div class="huge">Marks</div>
+										<div>Insert Marks</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="InsertMarks.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">Insert Course Mark</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
 							</a>
 						</div>
-						<div class="panel panel-red">
+						<div class="panel panel-green">
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-xs-3">
 										<i class="fa fa-support fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
+										<div class="huge">Attendance</div>
+										<div>Take Attendance</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="TakeAttendance.jsp">
 								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
+									<span class="pull-left">Attendance Sheet</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
 							</a>
 						</div>
+
+						
+						
 					</div>
 				</div>
 				<!-- /.row -->

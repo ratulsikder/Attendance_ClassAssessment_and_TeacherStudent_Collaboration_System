@@ -74,19 +74,18 @@
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
 				<li><a href="TeacherPanel.jsp"><i
-						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li><a href="TakeAttendance.jsp"><i
+						class="fa fa-fw fa-dashboard"></i> Teacher Panel</a></li>
+				<li ><a href="TakeAttendance.jsp"><i
 						class="fa fa-fw fa-bar-chart-o"></i>Take Attendance</a></li>
-				<li><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
+				<li ><a href="InsertMarks.jsp"><i class="fa fa-fw fa-table"></i>
 						Insert Marks</a></li>
-				<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-						Forms</a></li>
 				<li class="active"><a href="NewCourse.jsp"><i
 						class="fa fa-fw fa-desktop"></i> Start New Course</a></li>
 				<li><a href="ViewCourseRequest.jsp"><i
 						class="fa fa-fw fa-wrench"></i> Review Course Request</a></li>
-				<li><a href=""><i class="fa fa-fw fa-file"></i>
-						Status</a></li>
+						<li><a href="StudentDetailsTeacher.jsp"><i
+						class="fa fa-fw fa-wrench"></i> View Student Details</a></li>
+				
 			</ul>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
