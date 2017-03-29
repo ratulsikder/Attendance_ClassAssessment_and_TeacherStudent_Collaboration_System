@@ -106,38 +106,71 @@
 				<!-- /.row -->
 				<div class="row">
 					<div class="container">
-						<form id="contact" action="FileUplode" method="post">
-							<h3>Fill the Course Details and Submit Assignment</h3>
-							<fieldset>
-								<input placeholder="Student Id" type="text"
-									tabindex="1" name="student_id" required autofocus>
-							</fieldset>
-							<fieldset>
-								<input placeholder="Department name in short form" type="text"
-									tabindex="2" name="department_name" required autofocus>
-							</fieldset>
-							<fieldset>
-								<input placeholder="Course Code" type="text" tabindex="3"
-									name="course_code" required>
-							</fieldset>
-							
-							<fieldset>
-								Course Taking Year:<input style="float: right" type="number"
-									value=<%=(int) Calendar.getInstance().get(Calendar.YEAR)%>
-									tabindex="4" name="course_year" required>
-							</fieldset>
-							<fieldset>
-								Assignment's PDF:<input style="float: right" type="file"
-									tabindex="5" name="flPhoto" required>
-							</fieldset>
-
-
-							<fieldset>
-								<button name="submit" type="submit" id="contact-submit"
-									>Submit Assignment</button>
-							</fieldset>
-
-						</form>
+ <form  id="contact"name="f1" method="post" enctype="multipart/form-data" action="newFile">
+            <h2>
+               Insert Assignment
+            </h2>
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                        <fieldset>
+                            <tr>
+                                <td>
+                                    ID:
+                                </td>
+                                <td>
+                                    <input type="text" name="id" value="" />
+                                </td>
+                            </tr>
+                             <tr>
+                             </fieldset>
+                                <td>
+                                    Dept name:
+                                </td>
+                                <td>
+                                    <input type="text" name="name" value="" />
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>
+                                    Course NO:
+                                </td>
+                                <td>
+                                    <input type="text" name="course" value="" />
+                                </td>
+                                <br>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Year:
+                                </td>
+                                <td>
+                                <input value=<%=(int) Calendar.getInstance().get(Calendar.YEAR)%>
+									 name="year">
+                                   
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <td>
+                                   File:
+                                </td>
+                                <td>
+                                    <input type="file" name="flPhoto" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right">
+                                    <input type="submit" value="Submit Assignment" name="btnSave" />
+                                </td>
+                            </tr>
+                        </table> 
+                    </td>
+                   
+               
+            </table>
+        </form>
 					</div>
 				</div>
 
