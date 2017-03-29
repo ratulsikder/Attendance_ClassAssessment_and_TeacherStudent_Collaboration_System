@@ -57,10 +57,10 @@
 <td><h3>Contract No:</h3><input type="text" name="conu" placeholder="Contract Number" required /></td>
 </tr>
 
-<tr>
+<!--  <tr>
 <td><h3>Upload Your Picture: </h3> <input type="file" name="file"/> </td>
 </tr>
-
+-->
 <tr>
 <td><h3>Guardian Name:</h3>
 <input type="text" name="gname" placeholder="Your Guardian Name" required /></td>
