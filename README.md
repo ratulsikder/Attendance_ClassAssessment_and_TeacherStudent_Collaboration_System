@@ -109,10 +109,6 @@ CREATE TABLE  "PPP"
 
 See also the list of [contributors](https://github.com/ratulsikder/Attendance_ClassAssessment_and_TeacherStudent_Collaboration_System/graphs/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * This web app is a project under LICT 260hr Java Training 2017, BSMRSTU, BD.
